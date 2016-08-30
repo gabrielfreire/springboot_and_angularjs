@@ -1,0 +1,80 @@
+
+entity Cliente {
+	clientePrimeiroNome String required,
+    clienteUltNome String required,
+	clienteEmail String required,
+    clienteTelefone String required,
+    clienteCelular String,
+    clienteCpfCnpj String required,
+    clienteRua String required,
+	clienteCodPostal String required,
+	clienteCidade String required,
+    clienteEstado String required
+}
+
+entity Produto {
+	prodCodigo String required,
+	prodNome String required,
+    prodMarca String,
+    prodPreco BigDecimal required,
+    prodQtd Integer required,
+    prodCor String
+}
+
+entity Categoria{
+	catNome String
+}
+
+entity Pedido {
+	pedidoNum Long required,
+	pedidoData ZonedDateTime required,
+    pedidoQtd Integer required
+}
+
+entity Fornecedor{
+	fornNome String required,
+    fornCnpj String required,
+    fornCelular String,
+    fornTelefone String required,
+    fornEmail String required,
+    fornRua String required,
+	fornCodPostal String required,
+	fornCidade String required,
+    fornEstado String required
+}
+entity Item{
+	itemCod String,
+    itemQtd Integer,
+    itemPreco BigDecimal
+}
+
+relationship OneToMany {
+	Produto{item} to Item
+}
+relationship OneToMany {
+	Pedido{item} to Item
+}
+relationship ManyToOne {
+	Produto{categoria} to Categoria
+}
+relationship OneToMany {
+	Fornecedor{produto} to Produto
+}
+relationship ManyToOne{
+	Cliente{user(login)} to User,
+    Produto{user(login)} to User,
+    Fornecedor{user(login)} to User
+}
+
+
+
+
+paginate Cliente, Produto, Pedido, Fornecedor, Categoria with infinite-scroll
+
+service Pedido with serviceClass
+service Categoria with serviceClass
+service Fornecedor with serviceClass
+service Produto with serviceClass
+service Cliente with serviceClass
+
+	

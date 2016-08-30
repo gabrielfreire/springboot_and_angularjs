@@ -1,0 +1,107 @@
+<div ng-cloak>
+    <!--<div class="row">
+        <div class="col-md-4">
+            <span class="hipster img-responsive img-rounded"></span>
+        </div>
+        <div class="col-md-8">
+            <h1 translate="home.title">Welcome, Java Hipster!</h1>
+            <p class="lead" translate="home.subtitle">This is your homepage</p>
+
+            <div ng-switch="vm.isAuthenticated()">
+                <div class="alert alert-success" ng-switch-when="true" translate="home.logged.message" translate-values="{username: '{{vm.account.login}}'}">
+                    You are logged in as user "{{vm.account.login}}".
+                </div>
+
+                <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.authenticated" translate-compile>
+                    If you want to <a class="alert-link" href="" ng-click="vm.login()">sign in</a>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").
+                </div>
+
+                <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.register" translate-compile>
+                    You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new account</a>
+                </div>
+            </div>
+
+            <p translate="home.question">
+                If you have any question on JHipster:
+            </p>
+
+            <ul>
+                <li><a href="http://jhipster.github.io/" target="_blank" translate="home.link.homepage">JHipster homepage</a></li>
+                <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" translate="home.link.stackoverflow">JHipster on Stack Overflow</a></li>
+                <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" translate="home.link.bugtracker">JHipster bug tracker</a></li>
+                <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" translate="home.link.chat">JHipster public chat room</a></li>
+                <li><a href="https://twitter.com/java_hipster" target="_blank"  translate="home.link.follow">follow @java_hipster on Twitter</a></li>
+            </ul>
+
+            <p>
+             <span translate="home.like">If you like JHipster, don't forget to give us a star on </span>&nbsp;<a href="https://github.com/jhipster/generator-jhipster" target="_blank" translate="home.github">Github</a>!
+            </p>
+        </div>
+    </div>-->
+    <!--       landing page heading     -->
+    <div class="bg"></div>
+    <section id="header">
+        <img id="charLanding" src="content/images/char.png"/>
+        <div class="container">
+            <div class="row">
+                <div ng-switch="vm.isAuthenticated()">
+                    <!-- <div class="alert alert-success" ng-switch-when="true">Você
+                        entrou como: "{{vm.account.login}}".</div> -->
+
+                    <!-- <div class="alert alert-warning" ng-switch-when="false">
+                        Se você quiser <a class="alert-link" href="" ng-click="vm.login()">Entrar</a>, use as contas default:<br />- Administrator
+                        (login="admin" and password="admin") <br />- User (login="user"
+                        and password="user").
+                    </div> -->
+
+                    <!-- <div class="alert alert-warning" ng-switch-when="false">
+                        You don't have an account yet? <a class="alert-link"
+                            ui-sref="register">Register a new account</a>
+                    </div> -->
+                </div>
+                <div class="col-sm-12 center">
+                    
+                    <div ng-hide="vm.isAuthenticated()">
+                        <h1 class="mainTitle"><span translate="home.experimente">Experimente grátis por<br/> 15 dias!</span></h1>   
+                        <p class="landingContent text-center"><span translate="home.melhor">O melhor, mais rápido e mais simples<br/> controle de estoque para o seu negócio.</span></p>            
+                        <a ui-sref="register" class="btn btn-lg btn-danger"><strong><span translate="home.comece">Comece agora!</span></strong></a>
+                    </div>
+                    <div ng-show="vm.isAuthenticated()">
+                        <h1 class="mainTitle"><span translate="home.bemvindo" translate-values="{username: '{{vm.account.firstName + ' ' + vm.account.lastName}}'}">Bem-vindo {{vm.account.firstName}}</span></h1>  
+                        <p class="landingContent text-center"><span translate="home.conheca">Conheça mais um pouco dos nossos produtos neste</span><a href="http://www.gabrielfreire.com.br" target="blank">link</a>.</p>           
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div ng-hide="vm.isAuthenticated()">
+        <!--       segunda sessão     -->
+        <section id="why">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12">
+                        <h1 class="text-center">Porquê o XClient?</h1>
+                        <div class="center">
+                            <div class="col-sm-4 col-xs-12 text-center">
+                                <img class="img-responsive img-circle" src="content/images/monk.png"/>
+                                <h3>Suporte</h3>
+                                <p>Tenha total suporte com um ótimo atendimento do próprio desenvolvedor</p>
+                            </div>
+                            <div class="col-sm-4 col-xs-12 text-center">
+                                <img class="img-responsive img-circle" src="content/images/mwatch.png"/>
+                                <h3>Treinamento</h3>
+                                <p>Tenha treinamentos com o próprio desenvolvedor para melhor uso da plataforma</p>
+                            </div>
+                            <div class="col-sm-4 col-xs-12 text-center">
+                                <img class="img-responsive img-circle" src="content/images/myThree.png"/>
+                                <h3>Segurança</h3>
+                                <p>Segurança total utilizando sistema de autenticação OAuth 2.0 e HTTPS no browser</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

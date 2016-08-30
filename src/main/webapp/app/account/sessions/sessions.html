@@ -1,0 +1,81 @@
+<div>
+    <!--<h2 translate="sessions.title" translate-values="{username: '{{vm.account.login}}'}">Active sessions for [<b>{{vm.account.login}}</b>]</h2>
+
+    <div class="alert alert-success" ng-show="vm.success" translate="sessions.messages.success">
+        <strong>Session invalidated!</strong>
+    </div>
+    <div class="alert alert-danger" ng-show="vm.error" translate="sessions.messages.error">
+        <strong>An error has occured!</strong> The session could not be invalidated.
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="sessions.table.ipaddress">IP Address</th>
+                    <th translate="sessions.table.useragent">User agent</th>
+                    <th translate="sessions.table.date">Date</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="session in vm.sessions">
+                    <td>{{session.ipAddress}}</td>
+                    <td>{{session.userAgent}}</td>
+                    <td>{{session.formattedTokenDate}}</td>
+                    <td>
+                        <button type="submit"
+                                class="btn btn-primary"
+                                ng-click="vm.invalidate(session.series)" translate="sessions.table.button">
+                                 Invalidate
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>-->
+    <div class="row">
+        <div class="col-md-12 well">
+
+            <h1 id="dashTitle"><span class="glyphicon glyphicon-th-list" style="font-size:25pt"></span> Dashboard</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-pills" role="tablist">
+                        <li role="presentation" ng-class="{active: vm.$state.is('dashboard.painel')}"><a ng-click="vm.setTab(1)" ui-sref="dashboard.painel" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-home"></span> <span translate="global.menu.tabs.inicio">Painel</span></a></li>
+                        <li role="presentation" ng-class="{active: vm.$state.is('dashboard.estoque')}"><a ng-click="vm.setTab(2)" ui-sref="dashboard.estoque" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-shopping-cart"></span> <span translate="global.menu.tabs.estoque">Estoque</span></a></li>
+                        <li role="presentation" ng-class="{active: vm.$state.is('dashboard.clientes') || vm.$state.is('dashboard.cliente-detail')}"><a ng-click="vm.setTab(3)" ui-sref="dashboard.clientes" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-user"></span> <span translate="global.menu.tabs.clientes">Clientes</span></a></li>
+                        <li role="presentation" ng-class="{active: vm.$state.is('dashboard.vendas')}"><a ng-click="vm.setTab(4)" ui-sref="dashboard.vendas" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-usd"></span> <span translate="global.menu.tabs.vendas">Vendas</span></a></li>
+                        
+                    </ul>
+                </div>
+                <!-- <div class="panel-body"> -->
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div ng-show="vm.isSet(1) || vm.$state.is('dashboard.panel')">
+                        <!---->
+                        <div ui-view="content"></div>
+                    </div>
+                    <div ng-show="vm.isSet(2) || vm.$state.is('dashboard.estoque')">
+                        <!---->
+                        <div ui-view="content"></div>
+                    </div>
+                    <div ng-show="vm.isSet(3) || vm.$state.is('dashboard.clientes')">
+                        <!---->
+                        <div ui-view="content"></div>
+                    </div>
+                    <div ng-show="vm.isSet(4) || vm.$state.is('dashboard.vendas')">
+                        <!---->
+                        <div ui-view="content"></div>
+                    </div>
+                    
+                </div>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+
+entity Cliente {
+	clienteNomeCompleto String required,
+	clienteEmail String required,
+    clienteTelefone String required,
+    clienteCelular String,
+    clienteCpfCnpj String required,
+    clienteRua String required,
+	clienteCodPostal String required,
+	clienteCidade String required,
+    clienteEstado String required
+}
+
+entity Produto {
+	prodCodigo String,
+	prodNome String required,
+    prodMarca String,
+    prodPreco BigDecimal required,
+    prodQtd Integer required,
+    prodCor String
+}
+
+entity Categoria{
+	catNome String
+}
+
+entity Venda {
+	pedidoData ZonedDateTime required,
+    pedidoQtd Integer required,
+    formaDePagamento String
+}
+
+entity Fornecedor{
+	fornNome String required,
+    fornCnpj String required,
+    fornCelular String,
+    fornTelefone String required,
+    fornEmail String required,
+    fornRua String required,
+	fornCodPostal String required,
+	fornCidade String required,
+    fornEstado String required
+}
+
+
+relationship OneToMany {
+	Cliente{compras(pedidoData)} to Venda,
+	Venda{itens} to Produto,
+	Fornecedor{produto} to Produto
+}
+relationship ManyToOne{
+	Cliente{user(login)} to User,
+    Produto{user(login)} to User,
+    Fornecedor{user(login)} to User,
+    Produto{categoria(catNome)} to Categoria,
+    Produto{fornecedor(fornNome)} to Fornecedor,
+    Venda{cliente(clienteNomeCompleto)} to Cliente
+}
+
+dto * with mapstruct except Categoria
+
+service Pedido with serviceClass
+service Categoria with serviceClass
+service Fornecedor with serviceClass
+service Produto with serviceClass
+service Cliente with serviceClass
+
+	
