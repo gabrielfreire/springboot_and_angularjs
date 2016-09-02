@@ -1,0 +1,22 @@
+{
+    "xclientappApp": {
+        "categoria" : {
+            "home": {
+                "title": "Categorias",
+                "createLabel": "Criar novo Categoria",
+                "createOrEditLabel": "Criar ou editar Categoria",
+                "search": "Pesquisar por Categoria"
+            },
+            "created": "Um novo Categoria é criado com o identificador {{ param }}",
+            "updated": "Um Categoria é atualizado com o identificador {{ param }}",
+            "deleted": "Um Categoria é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Categoria {{ id }}?"
+            },
+            "detail": {
+                "title": "Categoria"
+            },
+            "catNome": "Cat Nome"
+        }
+    }
+}

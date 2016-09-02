@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="xclientappApp.fornecedor.detail.title">Fornecedor</span> {{vm.fornecedor.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="xclientappApp.fornecedor.fornNome">Forn Nome</span></dt>
+        <dd>
+            <span>{{vm.fornecedor.fornNome}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.fornecedor.fornCnpj">Forn Cnpj</span></dt>
+        <dd>
+            <span>{{vm.fornecedor.fornCnpj}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.fornecedor.fornCelular">Forn Celular</span></dt>
+        <dd>
+            <span>{{vm.fornecedor.fornCelular}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.fornecedor.fornTelefone">Forn Telefone</span></dt>
+        <dd>
+            <span>{{vm.fornecedor.fornTelefone}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.fornecedor.fornEmail">Forn Email</span></dt>
+        <dd>
+            <span>{{vm.fornecedor.fornEmail}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.fornecedor.fornRua">Forn Rua</span></dt>
+        <dd>
+            <span>{{vm.fornecedor.fornRua}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.fornecedor.fornCodPostal">Forn Cod Postal</span></dt>
+        <dd>
+            <span>{{vm.fornecedor.fornCodPostal}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.fornecedor.fornCidade">Forn Cidade</span></dt>
+        <dd>
+            <span>{{vm.fornecedor.fornCidade}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.fornecedor.fornEstado">Forn Estado</span></dt>
+        <dd>
+            <span>{{vm.fornecedor.fornEstado}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.fornecedor.user">User</span></dt>
+        <dd>
+            {{vm.fornecedor.userLogin}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

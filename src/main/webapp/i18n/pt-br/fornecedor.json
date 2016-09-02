@@ -1,0 +1,32 @@
+{
+    "xclientappApp": {
+        "fornecedor" : {
+            "home": {
+                "title": "Fornecedors",
+                "createLabel": "Criar novo Fornecedor",
+                "createOrEditLabel": "Criar ou editar Fornecedor",
+                "search": "Pesquisar por Fornecedor"
+            },
+            "created": "Um novo Fornecedor é criado com o identificador {{ param }}",
+            "updated": "Um Fornecedor é atualizado com o identificador {{ param }}",
+            "deleted": "Um Fornecedor é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Fornecedor {{ id }}?"
+            },
+            "detail": {
+                "title": "Fornecedor"
+            },
+            "fornNome": "Forn Nome",
+            "fornCnpj": "Forn Cnpj",
+            "fornCelular": "Forn Celular",
+            "fornTelefone": "Forn Telefone",
+            "fornEmail": "Forn Email",
+            "fornRua": "Forn Rua",
+            "fornCodPostal": "Forn Cod Postal",
+            "fornCidade": "Forn Cidade",
+            "fornEstado": "Forn Estado",
+            "produto": "Produto",
+            "user": "User"
+        }
+    }
+}

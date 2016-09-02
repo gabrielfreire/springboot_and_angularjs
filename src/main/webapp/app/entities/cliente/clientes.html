@@ -1,0 +1,76 @@
+<div>
+    <h2 translate="xclientappApp.cliente.home.title">Clientes</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="cliente.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="xclientappApp.cliente.home.createLabel">
+                        Create new Cliente
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="xclientappApp.cliente.clienteNomeCompleto">Cliente Nome Completo</span></th>
+                    <th><span translate="xclientappApp.cliente.clienteEmail">Cliente Email</span></th>
+                    <th><span translate="xclientappApp.cliente.clienteTelefone">Cliente Telefone</span></th>
+                    <th><span translate="xclientappApp.cliente.clienteCelular">Cliente Celular</span></th>
+                    <th><span translate="xclientappApp.cliente.clienteCpfCnpj">Cliente Cpf Cnpj</span></th>
+                    <th><span translate="xclientappApp.cliente.clienteRua">Cliente Rua</span></th>
+                    <th><span translate="xclientappApp.cliente.clienteCodPostal">Cliente Cod Postal</span></th>
+                    <th><span translate="xclientappApp.cliente.clienteCidade">Cliente Cidade</span></th>
+                    <th><span translate="xclientappApp.cliente.clienteEstado">Cliente Estado</span></th>
+                    <th><span translate="xclientappApp.cliente.user">User</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="cliente in vm.clientes track by cliente.id">
+                    <td><a ui-sref="cliente-detail({id:cliente.id})">{{cliente.id}}</a></td>
+                    <td>{{cliente.clienteNomeCompleto}}</td>
+                    <td>{{cliente.clienteEmail}}</td>
+                    <td>{{cliente.clienteTelefone}}</td>
+                    <td>{{cliente.clienteCelular}}</td>
+                    <td>{{cliente.clienteCpfCnpj}}</td>
+                    <td>{{cliente.clienteRua}}</td>
+                    <td>{{cliente.clienteCodPostal}}</td>
+                    <td>{{cliente.clienteCidade}}</td>
+                    <td>{{cliente.clienteEstado}}</td>
+                    <td>
+                        {{cliente.userLogin}}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="cliente-detail({id:cliente.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="cliente.edit({id:cliente.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="cliente.delete({id:cliente.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

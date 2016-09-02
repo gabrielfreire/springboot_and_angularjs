@@ -1,0 +1,38 @@
+
+<div>
+    <h2><span translate="xclientappApp.venda.detail.title">Venda</span> {{vm.venda.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="xclientappApp.venda.pedidoData">Pedido Data</span></dt>
+        <dd>
+            <span>{{vm.venda.pedidoData | date:'medium'}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.venda.pedidoQtd">Pedido Qtd</span></dt>
+        <dd>
+            <span>{{vm.venda.pedidoQtd}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.venda.formaDePagamento">Forma De Pagamento</span></dt>
+        <dd>
+            <span>{{vm.venda.formaDePagamento}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.venda.cliente">Cliente</span></dt>
+        <dd>
+            <a ui-sref="cliente-detail({id:vm.venda.clienteId})">{{vm.venda.clienteId}}</a>
+        </dd>
+        <dt><span translate="xclientappApp.venda.cliente">Cliente</span></dt>
+        <dd>
+            <a ui-sref="cliente-detail({id:vm.venda.clienteId})">{{vm.venda.clienteClienteNomeCompleto}}</a>
+        </dd>
+        <dt><span translate="xclientappApp.venda.itens">Itens</span></dt>
+        <dd>
+            <a ui-sref="produto-detail({id:vm.venda.itensId})">{{vm.venda.itensProdNome}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

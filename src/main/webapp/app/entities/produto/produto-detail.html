@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="xclientappApp.produto.detail.title">Produto</span> {{vm.produto.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="xclientappApp.produto.prodCodigo">Prod Codigo</span></dt>
+        <dd>
+            <span>{{vm.produto.prodCodigo}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.produto.prodNome">Prod Nome</span></dt>
+        <dd>
+            <span>{{vm.produto.prodNome}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.produto.prodMarca">Prod Marca</span></dt>
+        <dd>
+            <span>{{vm.produto.prodMarca}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.produto.prodPreco">Prod Preco</span></dt>
+        <dd>
+            <span>{{vm.produto.prodPreco}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.produto.prodQtd">Prod Qtd</span></dt>
+        <dd>
+            <span>{{vm.produto.prodQtd}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.produto.prodCor">Prod Cor</span></dt>
+        <dd>
+            <span>{{vm.produto.prodCor}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.produto.user">User</span></dt>
+        <dd>
+            {{vm.produto.userLogin}}
+        </dd>
+        <dt><span translate="xclientappApp.produto.categoria">Categoria</span></dt>
+        <dd>
+            <a ui-sref="categoria-detail({id:vm.produto.categoriaId})">{{vm.produto.categoriaCatNome}}</a>
+        </dd>
+        <dt><span translate="xclientappApp.produto.fornecedor">Fornecedor</span></dt>
+        <dd>
+            <a ui-sref="fornecedor-detail({id:vm.produto.fornecedorId})">{{vm.produto.fornecedorFornNome}}</a>
+        </dd>
+        <dt><span translate="xclientappApp.produto.fornecedor">Fornecedor</span></dt>
+        <dd>
+            <a ui-sref="fornecedor-detail({id:vm.produto.fornecedorId})">{{vm.produto.fornecedorId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

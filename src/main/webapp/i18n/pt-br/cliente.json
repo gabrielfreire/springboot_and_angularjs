@@ -1,0 +1,32 @@
+{
+    "xclientappApp": {
+        "cliente" : {
+            "home": {
+                "title": "Clientes",
+                "createLabel": "Criar novo Cliente",
+                "createOrEditLabel": "Criar ou editar Cliente",
+                "search": "Pesquisar por Cliente"
+            },
+            "created": "Um novo Cliente é criado com o identificador {{ param }}",
+            "updated": "Um Cliente é atualizado com o identificador {{ param }}",
+            "deleted": "Um Cliente é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Cliente {{ id }}?"
+            },
+            "detail": {
+                "title": "Cliente"
+            },
+            "clienteNomeCompleto": "Cliente Nome Completo",
+            "clienteEmail": "Cliente Email",
+            "clienteTelefone": "Cliente Telefone",
+            "clienteCelular": "Cliente Celular",
+            "clienteCpfCnpj": "Cliente Cpf Cnpj",
+            "clienteRua": "Cliente Rua",
+            "clienteCodPostal": "Cliente Cod Postal",
+            "clienteCidade": "Cliente Cidade",
+            "clienteEstado": "Cliente Estado",
+            "compras": "Compras",
+            "user": "User"
+        }
+    }
+}

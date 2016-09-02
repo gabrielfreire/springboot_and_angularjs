@@ -1,0 +1,32 @@
+{
+    "xclientappApp": {
+        "produto" : {
+            "home": {
+                "title": "Estoque",
+                "createLabel": "Adicionar Produto",
+                "createOrEditLabel": "Criar ou editar Produto",
+                "search": "Pesquisar por Produto"
+            },
+            "created": "Um novo Produto foi criado com o identificador {{ param }}",
+            "updated": "Um Produto foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Produto foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Produto {{ id }}?"
+            },
+            "detail": {
+                "title": "Produto"
+            },
+            "prodCodigo": "Código",
+            "prodNome": "Nome",
+            "prodMarca": "Marca",
+            "prodPreco": "Preço",
+            "prodQtd": "Qtd",
+            "prodCor": "Cor",
+            "user": "Usuário",
+            "categoria": "Categoria",
+            "fornecedor": "Fornecedor",
+            "venda": "Venda"
+            
+        }
+    }
+}

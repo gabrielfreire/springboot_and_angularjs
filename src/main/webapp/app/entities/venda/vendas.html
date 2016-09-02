@@ -1,0 +1,68 @@
+<div>
+    <h2 translate="xclientappApp.venda.home.title">Vendas</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="venda.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="xclientappApp.venda.home.createLabel">
+                        Create new Venda
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="xclientappApp.venda.pedidoData">Pedido Data</span></th>
+                    <th><span translate="xclientappApp.venda.pedidoQtd">Pedido Qtd</span></th>
+                    <th><span translate="xclientappApp.venda.formaDePagamento">Forma De Pagamento</span></th>
+                    <th><span translate="xclientappApp.venda.cliente">Cliente</span></th>
+                    <th><span translate="xclientappApp.venda.itens">Itens</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="venda in vm.vendas track by venda.id">
+                    <td><a ui-sref="venda-detail({id:venda.id})">{{venda.id}}</a></td>
+                    <td>{{venda.pedidoData | date:'medium'}}</td>
+                    <td>{{venda.pedidoQtd}}</td>
+                    <td>{{venda.formaDePagamento}}</td>
+                    <td>
+                        <a ui-sref="cliente-detail({id:venda.clienteId})">{{venda.clienteClienteNomeCompleto}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="produto-detail({id:venda.itensId})">{{venda.itensProdNome}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="venda-detail({id:venda.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="venda.edit({id:venda.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="venda.delete({id:venda.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

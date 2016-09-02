@@ -1,0 +1,78 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipType": "many-to-one",
+      "relationshipName": "user",
+      "otherEntityName": "user",
+      "otherEntityField": "login"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipType": "many-to-one",
+      "relationshipName": "categoria",
+      "otherEntityName": "categoria",
+      "otherEntityField": "catNome"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipType": "many-to-one",
+      "relationshipName": "fornecedor",
+      "otherEntityName": "fornecedor",
+      "otherEntityField": "fornNome"
+    },
+    {
+      "relationshipId": 4,
+      "relationshipName": "fornecedor",
+      "otherEntityName": "fornecedor",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "prodCodigo",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "prodNome",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "prodMarca",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "prodPreco",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "prodQtd",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "prodCor",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160830223305",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceClass",
+  "entityTableName": "produto"
+}

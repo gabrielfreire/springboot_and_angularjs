@@ -45,8 +45,7 @@ entity Fornecedor{
 
 relationship OneToMany {
 	Cliente{compras(pedidoData)} to Venda,
-	Venda{itens} to Produto,
-	Fornecedor{produto} to Produto
+	Fornecedor{produto(prodNome)} to Produto
 }
 relationship ManyToOne{
 	Cliente{user(login)} to User,
@@ -54,12 +53,13 @@ relationship ManyToOne{
     Fornecedor{user(login)} to User,
     Produto{categoria(catNome)} to Categoria,
     Produto{fornecedor(fornNome)} to Fornecedor,
-    Venda{cliente(clienteNomeCompleto)} to Cliente
+    Venda{cliente(clienteNomeCompleto)} to Cliente,
+    Venda{itens(prodNome)} to Produto
 }
 
 dto * with mapstruct except Categoria
 
-service Pedido with serviceClass
+service Venda with serviceClass
 service Categoria with serviceClass
 service Fornecedor with serviceClass
 service Produto with serviceClass

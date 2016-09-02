@@ -1,0 +1,134 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myFornecedorLabel" translate="xclientappApp.fornecedor.home.createOrEditLabel">Create or edit a Fornecedor</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.fornecedor.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.fornecedor.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="xclientappApp.fornecedor.fornNome" for="field_fornNome">Forn Nome</label>
+            <input type="text" class="form-control" name="fornNome" id="field_fornNome"
+                    ng-model="vm.fornecedor.fornNome"
+                    required />
+            <div ng-show="editForm.fornNome.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.fornNome.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="xclientappApp.fornecedor.fornCnpj" for="field_fornCnpj">Forn Cnpj</label>
+            <input type="text" class="form-control" name="fornCnpj" id="field_fornCnpj"
+                    ng-model="vm.fornecedor.fornCnpj"
+                    required />
+            <div ng-show="editForm.fornCnpj.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.fornCnpj.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="xclientappApp.fornecedor.fornCelular" for="field_fornCelular">Forn Celular</label>
+            <input type="text" class="form-control" name="fornCelular" id="field_fornCelular"
+                    ng-model="vm.fornecedor.fornCelular"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="xclientappApp.fornecedor.fornTelefone" for="field_fornTelefone">Forn Telefone</label>
+            <input type="text" class="form-control" name="fornTelefone" id="field_fornTelefone"
+                    ng-model="vm.fornecedor.fornTelefone"
+                    required />
+            <div ng-show="editForm.fornTelefone.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.fornTelefone.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="xclientappApp.fornecedor.fornEmail" for="field_fornEmail">Forn Email</label>
+            <input type="text" class="form-control" name="fornEmail" id="field_fornEmail"
+                    ng-model="vm.fornecedor.fornEmail"
+                    required />
+            <div ng-show="editForm.fornEmail.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.fornEmail.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="xclientappApp.fornecedor.fornRua" for="field_fornRua">Forn Rua</label>
+            <input type="text" class="form-control" name="fornRua" id="field_fornRua"
+                    ng-model="vm.fornecedor.fornRua"
+                    required />
+            <div ng-show="editForm.fornRua.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.fornRua.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="xclientappApp.fornecedor.fornCodPostal" for="field_fornCodPostal">Forn Cod Postal</label>
+            <input type="text" class="form-control" name="fornCodPostal" id="field_fornCodPostal"
+                    ng-model="vm.fornecedor.fornCodPostal"
+                    required />
+            <div ng-show="editForm.fornCodPostal.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.fornCodPostal.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="xclientappApp.fornecedor.fornCidade" for="field_fornCidade">Forn Cidade</label>
+            <input type="text" class="form-control" name="fornCidade" id="field_fornCidade"
+                    ng-model="vm.fornecedor.fornCidade"
+                    required />
+            <div ng-show="editForm.fornCidade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.fornCidade.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="xclientappApp.fornecedor.fornEstado" for="field_fornEstado">Forn Estado</label>
+            <input type="text" class="form-control" name="fornEstado" id="field_fornEstado"
+                    ng-model="vm.fornecedor.fornEstado"
+                    required />
+            <div ng-show="editForm.fornEstado.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.fornEstado.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="xclientappApp.fornecedor.user" for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" ng-model="vm.fornecedor.userId" ng-options="user.id as user.login for user in vm.users"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="xclientappApp.cliente.detail.title">Cliente</span> {{vm.cliente.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="xclientappApp.cliente.clienteNomeCompleto">Cliente Nome Completo</span></dt>
+        <dd>
+            <span>{{vm.cliente.clienteNomeCompleto}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.cliente.clienteEmail">Cliente Email</span></dt>
+        <dd>
+            <span>{{vm.cliente.clienteEmail}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.cliente.clienteTelefone">Cliente Telefone</span></dt>
+        <dd>
+            <span>{{vm.cliente.clienteTelefone}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.cliente.clienteCelular">Cliente Celular</span></dt>
+        <dd>
+            <span>{{vm.cliente.clienteCelular}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.cliente.clienteCpfCnpj">Cliente Cpf Cnpj</span></dt>
+        <dd>
+            <span>{{vm.cliente.clienteCpfCnpj}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.cliente.clienteRua">Cliente Rua</span></dt>
+        <dd>
+            <span>{{vm.cliente.clienteRua}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.cliente.clienteCodPostal">Cliente Cod Postal</span></dt>
+        <dd>
+            <span>{{vm.cliente.clienteCodPostal}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.cliente.clienteCidade">Cliente Cidade</span></dt>
+        <dd>
+            <span>{{vm.cliente.clienteCidade}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.cliente.clienteEstado">Cliente Estado</span></dt>
+        <dd>
+            <span>{{vm.cliente.clienteEstado}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.cliente.user">User</span></dt>
+        <dd>
+            {{vm.cliente.userLogin}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

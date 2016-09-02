@@ -1,0 +1,26 @@
+{
+    "xclientappApp": {
+        "venda" : {
+            "home": {
+                "title": "Vendas",
+                "createLabel": "Registrar nova venda",
+                "createOrEditLabel": "Criar ou editar Venda",
+                "search": "Pesquisar por Venda"
+            },
+            "created": "Um novo Venda é criado com o identificador {{ param }}",
+            "updated": "Um Venda é atualizado com o identificador {{ param }}",
+            "deleted": "Um Venda é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Venda {{ id }}?"
+            },
+            "detail": {
+                "title": "Venda"
+            },
+            "pedidoData": "Data do pedido",
+            "pedidoQtd": "Quantidade",
+            "formaDePagamento": "Forma de pagamento",
+            "cliente": "Cliente",
+            "itens": "Itens"
+        }
+    }
+}

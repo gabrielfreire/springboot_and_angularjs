@@ -1,0 +1,31 @@
+{
+    "xclientappApp": {
+        "produto" : {
+            "home": {
+                "title": "Produtos",
+                "createLabel": "Create a new Produto",
+                "createOrEditLabel": "Create or edit a Produto",
+                "search": "Search for Produto"
+            },
+            "created": "A new Produto is created with identifier {{ param }}",
+            "updated": "A Produto is updated with identifier {{ param }}",
+            "deleted": "A Produto is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Produto {{ id }}?"
+            },
+            "detail": {
+                "title": "Produto"
+            },
+            "prodCodigo": "Prod Codigo",
+            "prodNome": "Prod Nome",
+            "prodMarca": "Prod Marca",
+            "prodPreco": "Prod Preco",
+            "prodQtd": "Prod Qtd",
+            "prodCor": "Prod Cor",
+            "user": "User",
+            "categoria": "Categoria",
+            "fornecedor": "Fornecedor",
+            "fornecedor": "Fornecedor"
+        }
+    }
+}

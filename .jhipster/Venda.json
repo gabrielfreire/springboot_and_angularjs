@@ -1,0 +1,53 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "cliente",
+      "otherEntityName": "cliente",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipType": "many-to-one",
+      "relationshipName": "cliente",
+      "otherEntityName": "cliente",
+      "otherEntityField": "clienteNomeCompleto"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipType": "many-to-one",
+      "relationshipName": "itens",
+      "otherEntityName": "produto",
+      "otherEntityField": "prodNome"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "pedidoData",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "pedidoQtd",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "formaDePagamento",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160830223307",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceClass",
+  "entityTableName": "venda"
+}

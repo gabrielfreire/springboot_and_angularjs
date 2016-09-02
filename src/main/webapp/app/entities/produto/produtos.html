@@ -1,0 +1,80 @@
+<div>
+    <!--<h2 translate="xclientappApp.produto.home.title">Produtos</h2>-->
+    <hr>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="dashboard.novoProduto" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="xclientappApp.produto.home.createLabel">
+                        Create new Produto
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="xclientappApp.produto.prodCodigo">Prod Codigo</span></th>
+                    <th><span translate="xclientappApp.produto.prodNome">Prod Nome</span></th>
+                    <th><span translate="xclientappApp.produto.prodMarca">Prod Marca</span></th>
+                    <th><span translate="xclientappApp.produto.prodPreco">Prod Preco</span></th>
+                    <th><span translate="xclientappApp.produto.prodQtd">Prod Qtd</span></th>
+                    <th><span translate="xclientappApp.produto.prodCor">Prod Cor</span></th>
+                    <th><span translate="xclientappApp.produto.user">User</span></th>
+                    <th><span translate="xclientappApp.produto.categoria">Categoria</span></th>
+                    <th><span translate="xclientappApp.produto.fornecedor">Fornecedor</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="produto in vm.produtos track by produto.id">
+                    <td><a ui-sref="produto-detail({id:produto.id})">{{produto.id}}</a></td>
+                    <td>{{produto.prodCodigo}}</td>
+                    <td>{{produto.prodNome}}</td>
+                    <td>{{produto.prodMarca}}</td>
+                    <td>{{produto.prodPreco | currency:'R$':2}}</td>
+                    <td>{{produto.prodQtd}}</td>
+                    <td>{{produto.prodCor}}</td>
+                    <td>
+                        {{produto.userLogin}}
+                    </td>
+                    <td>
+                        <a ui-sref="categoria-detail({id:produto.categoriaId})">{{produto.categoriaCatNome}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="fornecedor-detail({id:produto.fornecedorId})">{{produto.fornecedorFornNome}}</a>
+                    </td>
+
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="dashboard.detalheProduto({id:produto.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="dashboard.editarProduto({id:produto.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="dashboard.deletarProduto({id:produto.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

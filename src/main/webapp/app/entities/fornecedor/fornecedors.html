@@ -1,0 +1,76 @@
+<div>
+    <h2 translate="xclientappApp.fornecedor.home.title">Fornecedors</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="fornecedor.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="xclientappApp.fornecedor.home.createLabel">
+                        Create new Fornecedor
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="xclientappApp.fornecedor.fornNome">Forn Nome</span></th>
+                    <th><span translate="xclientappApp.fornecedor.fornCnpj">Forn Cnpj</span></th>
+                    <th><span translate="xclientappApp.fornecedor.fornCelular">Forn Celular</span></th>
+                    <th><span translate="xclientappApp.fornecedor.fornTelefone">Forn Telefone</span></th>
+                    <th><span translate="xclientappApp.fornecedor.fornEmail">Forn Email</span></th>
+                    <th><span translate="xclientappApp.fornecedor.fornRua">Forn Rua</span></th>
+                    <th><span translate="xclientappApp.fornecedor.fornCodPostal">Forn Cod Postal</span></th>
+                    <th><span translate="xclientappApp.fornecedor.fornCidade">Forn Cidade</span></th>
+                    <th><span translate="xclientappApp.fornecedor.fornEstado">Forn Estado</span></th>
+                    <th><span translate="xclientappApp.fornecedor.user">User</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="fornecedor in vm.fornecedors track by fornecedor.id">
+                    <td><a ui-sref="fornecedor-detail({id:fornecedor.id})">{{fornecedor.id}}</a></td>
+                    <td>{{fornecedor.fornNome}}</td>
+                    <td>{{fornecedor.fornCnpj}}</td>
+                    <td>{{fornecedor.fornCelular}}</td>
+                    <td>{{fornecedor.fornTelefone}}</td>
+                    <td>{{fornecedor.fornEmail}}</td>
+                    <td>{{fornecedor.fornRua}}</td>
+                    <td>{{fornecedor.fornCodPostal}}</td>
+                    <td>{{fornecedor.fornCidade}}</td>
+                    <td>{{fornecedor.fornEstado}}</td>
+                    <td>
+                        {{fornecedor.userLogin}}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="fornecedor-detail({id:fornecedor.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="fornecedor.edit({id:fornecedor.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="fornecedor.delete({id:fornecedor.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
