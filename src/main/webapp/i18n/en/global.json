@@ -36,7 +36,14 @@
                 "database": "Database",
                 "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)"
             },
-            "language": "Language"
+            "language": "Language",
+            "tabs":{
+                "inicio": " Panel",
+                "estoque": " Iventory",
+                "clientes": " Clients",
+                "vendas": " Sales",
+                "produtos": " Products"
+            }
         },
         "form": {
             "username": "Username",

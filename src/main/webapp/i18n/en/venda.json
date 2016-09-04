@@ -2,26 +2,25 @@
     "xclientappApp": {
         "venda" : {
             "home": {
-                "title": "Vendas",
-                "createLabel": "Create a new Venda",
-                "createOrEditLabel": "Create or edit a Venda",
-                "search": "Search for Venda"
+                "title": "Sales",
+                "createLabel": "Register a new Sale",
+                "createOrEditLabel": "Create or edit a Sale",
+                "search": "Search for Sales"
             },
-            "created": "A new Venda is created with identifier {{ param }}",
-            "updated": "A Venda is updated with identifier {{ param }}",
-            "deleted": "A Venda is deleted with identifier {{ param }}",
+            "created": "A new Sale was created with identifier {{ param }}",
+            "updated": "A Sale was updated with identifier {{ param }}",
+            "deleted": "A Sale was deleted with identifier {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete Venda {{ id }}?"
+                "question": "Are you sure you want to delete Sale {{ id }}?"
             },
             "detail": {
-                "title": "Venda"
+                "title": "Sale"
             },
-            "pedidoData": "Pedido Data",
-            "pedidoQtd": "Pedido Qtd",
-            "formaDePagamento": "Forma De Pagamento",
-            "cliente": "Cliente",
-            "cliente": "Cliente",
-            "itens": "Itens"
+            "pedidoData": "Date",
+            "pedidoQtd": "Amount",
+            "formaDePagamento": "Payment method",
+            "cliente": "Client",
+            "itens": "Product"
         }
     }
 }

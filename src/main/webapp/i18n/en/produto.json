@@ -2,30 +2,29 @@
     "xclientappApp": {
         "produto" : {
             "home": {
-                "title": "Produtos",
-                "createLabel": "Create a new Produto",
-                "createOrEditLabel": "Create or edit a Produto",
-                "search": "Search for Produto"
+                "title": "Products",
+                "createLabel": "Create a new Product",
+                "createOrEditLabel": "Create or edit a Product",
+                "search": "Search for Product"
             },
-            "created": "A new Produto is created with identifier {{ param }}",
-            "updated": "A Produto is updated with identifier {{ param }}",
-            "deleted": "A Produto is deleted with identifier {{ param }}",
+            "created": "A new Product was created with identifier {{ param }}",
+            "updated": "A Product was updated with identifier {{ param }}",
+            "deleted": "A Product was deleted with identifier {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete Produto {{ id }}?"
+                "question": "Are you sure you want to delete Product {{ id }}?"
             },
             "detail": {
-                "title": "Produto"
+                "title": "Product"
             },
-            "prodCodigo": "Prod Codigo",
-            "prodNome": "Prod Nome",
-            "prodMarca": "Prod Marca",
-            "prodPreco": "Prod Preco",
-            "prodQtd": "Prod Qtd",
-            "prodCor": "Prod Cor",
+            "prodCodigo": "Code",
+            "prodNome": "Name",
+            "prodMarca": "Brand",
+            "prodPreco": "Price",
+            "prodQtd": "Amount",
+            "prodCor": "Color",
             "user": "User",
-            "categoria": "Categoria",
-            "fornecedor": "Fornecedor",
-            "fornecedor": "Fornecedor"
+            "categoria": "Category",
+            "fornecedor": "Provider"
         }
     }
 }
