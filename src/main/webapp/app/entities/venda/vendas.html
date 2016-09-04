@@ -1,10 +1,11 @@
 <div>
-    <h2 translate="xclientappApp.venda.home.title">Vendas</h2>
+    <hr>
+    <!--<h2 translate="xclientappApp.venda.home.title">Vendas</h2>-->
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="venda.new" >
+                <button class="btn btn-primary" ui-sref="dashboard.novoVenda" >
                     <span class="glyphicon glyphicon-plus"></span>
                     <span  translate="xclientappApp.venda.home.createLabel">
                         Create new Venda
@@ -42,19 +43,19 @@
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
-                                    ui-sref="venda-detail({id:venda.id})"
+                                    ui-sref="dashboard.detalheVenda({id:venda.id})"
                                     class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-eye-open"></span>
                                 <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
                             </button>
                             <button type="submit"
-                                    ui-sref="venda.edit({id:venda.id})"
+                                    ui-sref="dashboard.editarVenda({id:venda.id})"
                                     class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-pencil"></span>
                                 <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
                             </button>
                             <button type="submit"
-                                    ui-sref="venda.delete({id:venda.id})"
+                                    ui-sref="dashboard.deletarVenda({id:venda.id})"
                                     class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-remove-circle"></span>
                                 <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>

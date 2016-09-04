@@ -5,11 +5,14 @@
         .module('xclientappApp')
         .controller('SessionsController', SessionsController);
 
-    SessionsController.$inject = ['Sessions', 'Principal', '$state'];
+    SessionsController.$inject = ['Sessions', 'Principal', '$state', 'Produto', 'Venda', 'Cliente'];
 
-    function SessionsController (Sessions, Principal, $state) {
+    function SessionsController (Sessions, Principal, $state, Produto, Venda, Cliente) {
         var vm = this;
 
+        vm.produtos = Produto.query();
+        vm.vendas = Venda.query();
+        vm.clientes = Cliente.query();
         vm.$state = $state;
         vm.tab = 1;
         vm.setTab = function(value){

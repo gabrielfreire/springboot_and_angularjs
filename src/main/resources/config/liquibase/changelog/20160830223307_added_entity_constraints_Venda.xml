@@ -14,12 +14,6 @@
                                  referencedColumnNames="id"
                                  referencedTableName="cliente"/>
 
-        <addForeignKeyConstraint baseColumnNames="cliente_id"
-                                 baseTableName="venda"
-                                 constraintName="fk_venda_cliente_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="cliente"/>
-
         <addForeignKeyConstraint baseColumnNames="itens_id"
                                  baseTableName="venda"
                                  constraintName="fk_venda_itens_id"

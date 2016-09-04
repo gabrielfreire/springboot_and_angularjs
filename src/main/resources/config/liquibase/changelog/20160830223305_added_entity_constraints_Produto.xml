@@ -26,11 +26,6 @@
                                  referencedColumnNames="id"
                                  referencedTableName="fornecedor"/>
 
-        <addForeignKeyConstraint baseColumnNames="fornecedor_id"
-                                 baseTableName="produto"
-                                 constraintName="fk_produto_fornecedor_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="fornecedor"/>
 
     </changeSet>
 </databaseChangeLog>

@@ -3,28 +3,28 @@
         "cliente" : {
             "home": {
                 "title": "Clientes",
-                "createLabel": "Criar novo Cliente",
-                "createOrEditLabel": "Criar ou editar Cliente",
+                "createLabel": "Registrar novo Cliente",
+                "createOrEditLabel": "Registrar ou editar Cliente",
                 "search": "Pesquisar por Cliente"
             },
-            "created": "Um novo Cliente é criado com o identificador {{ param }}",
-            "updated": "Um Cliente é atualizado com o identificador {{ param }}",
-            "deleted": "Um Cliente é deletado com o identificador {{ param }}",
+            "created": "Um novo cliente foi criado com o identificador {{ param }}",
+            "updated": "Um cliente foi atualizado com o identificador {{ param }}",
+            "deleted": "Um cliente foi deletado com o identificador {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Cliente {{ id }}?"
+                "question": "Tem certeza de que deseja excluir este Cliente {{ id }}?"
             },
             "detail": {
                 "title": "Cliente"
             },
-            "clienteNomeCompleto": "Cliente Nome Completo",
-            "clienteEmail": "Cliente Email",
-            "clienteTelefone": "Cliente Telefone",
-            "clienteCelular": "Cliente Celular",
-            "clienteCpfCnpj": "Cliente Cpf Cnpj",
-            "clienteRua": "Cliente Rua",
-            "clienteCodPostal": "Cliente Cod Postal",
-            "clienteCidade": "Cliente Cidade",
-            "clienteEstado": "Cliente Estado",
+            "clienteNomeCompleto": "Nome Completo",
+            "clienteEmail": "E-mail",
+            "clienteTelefone": "Telefone",
+            "clienteCelular": "Celular",
+            "clienteCpfCnpj": "Cpf/Cnpj",
+            "clienteRua": "Rua",
+            "clienteCodPostal": "Código Postal",
+            "clienteCidade": "Cidade",
+            "clienteEstado": "Estado",
             "compras": "Compras",
             "user": "User"
         }

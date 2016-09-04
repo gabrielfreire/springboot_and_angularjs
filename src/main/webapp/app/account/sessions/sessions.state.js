@@ -61,6 +61,11 @@
                     templateUrl: 'app/entities/produto/produtos.html',
                     controller: 'ProdutoController',
                     controllerAs: 'vm'
+                },
+                'categoria@':{
+                    templateUrl: 'app/entities/categoria/categorias.html',
+                    controller: 'CategoriaController',
+                    controllerAs: 'vm'
                 }
             },
             resolve: {
@@ -183,42 +188,258 @@
             url: '/clientes',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'global.menu.account.sessions'
+                pageTitle: 'xclientappApp.cliente.home.title'
             },
             views: {
                 'content@': {
-                    templateUrl: 'app/account/sessions/clientes/clientes.html',
-                    controller: 'SessionsController',
+                    templateUrl: 'app/entities/cliente/clientes.html',
+                    controller: 'ClienteController',
                     controllerAs: 'vm'
                 }
             },
             resolve: {
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('sessions');
+                    $translatePartialLoader.addPart('cliente');
+                    $translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]
             }
+        })
+        .state('dashboard.detalheCliente', {
+            parent: 'dashboard.clientes',
+            url: '/cliente/{id}',
+            data: {
+                authorities: ['ROLE_USER'],
+                pageTitle: 'xclientappApp.cliente.detail.title'
+            },
+            views: {
+                'content@': {
+                    templateUrl: 'app/entities/cliente/cliente-detail.html',
+                    controller: 'ClienteDetailController',
+                    controllerAs: 'vm'
+                }
+            },
+            resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('cliente');
+                    return $translate.refresh();
+                }],
+                entity: ['$stateParams', 'Cliente', function($stateParams, Cliente) {
+                    return Cliente.get({id : $stateParams.id}).$promise;
+                }]
+            }
+        })
+        .state('dashboard.novoCliente', {
+            parent: 'dashboard.clientes',
+            url: '/new',
+            data: {
+                authorities: ['ROLE_USER']
+            },
+            onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                $uibModal.open({
+                    templateUrl: 'app/entities/cliente/cliente-dialog.html',
+                    controller: 'ClienteDialogController',
+                    controllerAs: 'vm',
+                    backdrop: 'static',
+                    size: 'lg',
+                    resolve: {
+                        entity: function () {
+                            return {
+                                clienteNomeCompleto: null,
+                                clienteEmail: null,
+                                clienteTelefone: null,
+                                clienteCelular: null,
+                                clienteCpfCnpj: null,
+                                clienteRua: null,
+                                clienteCodPostal: null,
+                                clienteCidade: null,
+                                clienteEstado: null,
+                                id: null
+                            };
+                        }
+                    }
+                }).result.then(function() {
+                    $state.go('dashboard.clientes', null, { reload: true });
+                }, function() {
+                    $state.go('dashboard.clientes');
+                });
+            }]
+        })
+        .state('dashboard.editarCliente', {
+            parent: 'dashboard.clientes',
+            url: '/{id}/edit',
+            data: {
+                authorities: ['ROLE_USER']
+            },
+            onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                $uibModal.open({
+                    templateUrl: 'app/entities/cliente/cliente-dialog.html',
+                    controller: 'ClienteDialogController',
+                    controllerAs: 'vm',
+                    backdrop: 'static',
+                    size: 'lg',
+                    resolve: {
+                        entity: ['Cliente', function(Cliente) {
+                            return Cliente.get({id : $stateParams.id}).$promise;
+                        }]
+                    }
+                }).result.then(function() {
+                    $state.go('dashboard.clientes', null, { reload: true });
+                }, function() {
+                    $state.go('dashboard.clientes');
+                });
+            }]
+        })
+        .state('dashboard.deletarCliente', {
+            parent: 'dashboard.clientes',
+            url: '/{id}/delete',
+            data: {
+                authorities: ['ROLE_USER']
+            },
+            onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                $uibModal.open({
+                    templateUrl: 'app/entities/cliente/cliente-delete-dialog.html',
+                    controller: 'ClienteDeleteController',
+                    controllerAs: 'vm',
+                    size: 'md',
+                    resolve: {
+                        entity: ['Cliente', function(Cliente) {
+                            return Cliente.get({id : $stateParams.id}).$promise;
+                        }]
+                    }
+                }).result.then(function() {
+                    $state.go('dashboard.clientes', null, { reload: true });
+                }, function() {
+                    $state.go('dashboard.clientes');
+                });
+            }]
         })
         .state('dashboard.vendas', {
             parent: 'dashboard',
             url: '/vendas',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'global.menu.account.sessions'
+                pageTitle: 'xclientappApp.venda.home.title'
             },
             views: {
                 'content@': {
-                    templateUrl: 'app/account/sessions/vendas/vendas.html',
-                    controller: 'SessionsController',
+                    templateUrl: 'app/entities/venda/vendas.html',
+                    controller: 'VendaController',
                     controllerAs: 'vm'
                 }
             },
             resolve: {
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('sessions');
+                    $translatePartialLoader.addPart('venda');
+                    $translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]
             }
+        })
+        .state('dashboard.detalheVenda', {
+            parent: 'dashboard.vendas',
+            url: '/venda/{id}',
+            data: {
+                authorities: ['ROLE_USER'],
+                pageTitle: 'xclientappApp.venda.detail.title'
+            },
+            views: {
+                'content@': {
+                    templateUrl: 'app/entities/venda/venda-detail.html',
+                    controller: 'VendaDetailController',
+                    controllerAs: 'vm'
+                }
+            },
+            resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('venda');
+                    return $translate.refresh();
+                }],
+                entity: ['$stateParams', 'Venda', function($stateParams, Venda) {
+                    return Venda.get({id : $stateParams.id}).$promise;
+                }]
+            }
+        })
+        .state('dashboard.novoVenda', {
+            parent: 'dashboard.vendas',
+            url: '/new',
+            data: {
+                authorities: ['ROLE_USER']
+            },
+            onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                $uibModal.open({
+                    templateUrl: 'app/entities/venda/venda-dialog.html',
+                    controller: 'VendaDialogController',
+                    controllerAs: 'vm',
+                    backdrop: 'static',
+                    size: 'lg',
+                    resolve: {
+                        entity: function () {
+                            return {
+                                pedidoData: null,
+                                pedidoQtd: null,
+                                formaDePagamento: null,
+                                id: null
+                            };
+                        }
+                    }
+                }).result.then(function() {
+                    $state.go('dashboard.vendas', null, { reload: true });
+                }, function() {
+                    $state.go('dashboard.vendas');
+                });
+            }]
+        })
+        .state('dashboard.editarVenda', {
+            parent: 'dashboard.vendas',
+            url: '/{id}/edit',
+            data: {
+                authorities: ['ROLE_USER']
+            },
+            onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                $uibModal.open({
+                    templateUrl: 'app/entities/venda/venda-dialog.html',
+                    controller: 'VendaDialogController',
+                    controllerAs: 'vm',
+                    backdrop: 'static',
+                    size: 'lg',
+                    resolve: {
+                        entity: ['Venda', function(Venda) {
+                            return Venda.get({id : $stateParams.id}).$promise;
+                        }]
+                    }
+                }).result.then(function() {
+                    $state.go('dashboard.vendas', null, { reload: true });
+                }, function() {
+                    $state.go('dashboard.vendas');
+                });
+            }]
+        })
+        .state('dashboard.deletarVenda', {
+            parent: 'dashboard.vendas',
+            url: '/{id}/delete',
+            data: {
+                authorities: ['ROLE_USER']
+            },
+            onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                $uibModal.open({
+                    templateUrl: 'app/entities/venda/venda-delete-dialog.html',
+                    controller: 'VendaDeleteController',
+                    controllerAs: 'vm',
+                    size: 'md',
+                    resolve: {
+                        entity: ['Venda', function(Venda) {
+                            return Venda.get({id : $stateParams.id}).$promise;
+                        }]
+                    }
+                }).result.then(function() {
+                    $state.go('dashboard.vendas', null, { reload: true });
+                }, function() {
+                    $state.go('dashboard.vendas');
+                });
+            }]
         });
     }
 })();
