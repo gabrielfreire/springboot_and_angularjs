@@ -45,6 +45,10 @@
             resolve: {
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('sessions');
+                    $translatePartialLoader.addPart('produto');
+                    $translatePartialLoader.addPart('cliente');
+                    $translatePartialLoader.addPart('venda');
+                    $translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]
             }

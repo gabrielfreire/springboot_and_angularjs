@@ -131,5 +131,5 @@
         "emailexists": "E-mail is already in use!",
         "idexists": "A new {{ entityName }} cannot already have an ID"
     },
-    "footer": "Copyright 2016 Gabriel Freire | Web Developer"
+    "footer": "Copyright 2016 Gabriel Freire | Desenvolvedor Web<br><strong>gabrielfreiredev@gmail.com</strong>"
 }
