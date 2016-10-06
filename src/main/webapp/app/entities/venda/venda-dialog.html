@@ -55,13 +55,6 @@
                     ng-model="vm.venda.formaDePagamento"
                      />
         </div>
-
-        <div class="form-group">
-            <label translate="xclientappApp.venda.cliente" for="field_cliente">Cliente</label>
-            <select class="form-control" id="field_cliente" name="cliente" ng-model="vm.venda.clienteId" ng-options="cliente.id as cliente.id for cliente in vm.clientes"            >
-                <option value=""></option>
-            </select>
-        </div>
         <div class="form-group">
             <label translate="xclientappApp.venda.cliente" for="field_cliente">Cliente</label>
             <select class="form-control" id="field_cliente" name="cliente" ng-model="vm.venda.clienteId" ng-options="cliente.id as cliente.clienteNomeCompleto for cliente in vm.clientes"            >
@@ -70,9 +63,12 @@
         </div>
         <div class="form-group">
             <label translate="xclientappApp.venda.itens" for="field_itens">Itens</label>
-            <select class="form-control" id="field_itens" name="itens" ng-model="vm.venda.itensId" ng-options="produto.id as produto.prodNome for produto in vm.produtos"            >
+            <select class="form-control" id="field_itens" name="itens" ng-model="vm.venda.item.id" ng-options="produto.id as produto.prodNome for produto in vm.produtos"            >
                 <option value=""></option>
             </select>
+        </div>
+        <div ng-if="$error">
+            <h4>Este item não possui todas essas unidades</h4>
         </div>
     </div>
     <div class="modal-footer">

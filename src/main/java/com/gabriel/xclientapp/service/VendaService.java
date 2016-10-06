@@ -1,7 +1,9 @@
 package com.gabriel.xclientapp.service;
 
+import com.gabriel.xclientapp.domain.Produto;
 import com.gabriel.xclientapp.domain.Venda;
 import com.gabriel.xclientapp.repository.VendaRepository;
+import com.gabriel.xclientapp.web.rest.dto.ProdutoDTO;
 import com.gabriel.xclientapp.web.rest.dto.VendaDTO;
 import com.gabriel.xclientapp.web.rest.mapper.VendaMapper;
 import org.slf4j.Logger;
@@ -27,6 +29,9 @@ public class VendaService {
     private VendaRepository vendaRepository;
     
     @Inject
+    private ProdutoService produtoService;
+    
+    @Inject
     private VendaMapper vendaMapper;
     
     /**
@@ -38,9 +43,24 @@ public class VendaService {
     public VendaDTO save(VendaDTO vendaDTO) {
         log.debug("Request to save Venda : {}", vendaDTO);
         Venda venda = vendaMapper.vendaDTOToVenda(vendaDTO);
-        venda = vendaRepository.save(venda);
-        VendaDTO result = vendaMapper.vendaToVendaDTO(venda);
-        return result;
+        ProdutoDTO produtoSold = produtoService.findOne(venda.getItens().getId());
+        //Keep track of how much there is and how much was requested to be sold
+        int amountOfTheProduct = produtoSold.getProdQtd();
+        int amountRequested = venda.getPedidoQtd();
+        //if there is enough products on inventory sell, otherwise return null
+        if(amountRequested > amountOfTheProduct){
+        	System.out.println("Não possui quantidade suficiente.\n" + produtoSold.getProdNome() + ": " + amountOfTheProduct + "\nVocê pediu: " + amountRequested);
+        	log.debug("Request failed, not enough amount");
+        	return null;
+        }else{
+        	produtoSold.setProdQtd(amountOfTheProduct - amountRequested);
+        	produtoService.save(produtoSold);
+        	venda = vendaRepository.save(venda);
+            VendaDTO result = vendaMapper.vendaToVendaDTO(venda);
+            return result;
+        }
+        
+        
     }
 
     /**

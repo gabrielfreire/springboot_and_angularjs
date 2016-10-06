@@ -7,11 +7,11 @@
                 "createOrEditLabel": "Criar ou editar Venda",
                 "search": "Pesquisar por Venda"
             },
-            "created": "Um novo Venda é criado com o identificador {{ param }}",
-            "updated": "Um Venda é atualizado com o identificador {{ param }}",
-            "deleted": "Um Venda é deletado com o identificador {{ param }}",
+            "created": "Uma nova venda foi registrada com o identificador {{ param }}",
+            "updated": "Uma venda foi atualizado com o identificador {{ param }}",
+            "deleted": "Uma venda foi deletada com o identificador {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Venda {{ id }}?"
+                "question": "Tem certeza de que deseja excluir esta venda {{ id }}?"
             },
             "detail": {
                 "title": "Venda"

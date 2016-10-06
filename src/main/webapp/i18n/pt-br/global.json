@@ -42,6 +42,7 @@
                 "estoque": " Estoque",
                 "clientes": " Clientes",
                 "vendas": " Vendas",
+                "categoria": "Categoria",
                 "produtos": " Produtos"
             }
         },

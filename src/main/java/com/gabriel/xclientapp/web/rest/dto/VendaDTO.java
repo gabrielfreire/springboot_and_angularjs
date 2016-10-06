@@ -2,6 +2,9 @@ package com.gabriel.xclientapp.web.rest.dto;
 
 import java.time.ZonedDateTime;
 import javax.validation.constraints.*;
+
+import com.gabriel.xclientapp.domain.Produto;
+
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -30,7 +33,7 @@ public class VendaDTO implements Serializable {
 
     private String clienteClienteNomeCompleto;
 
-    private Long itensId;
+    private Produto item;
     
 
     private String itensProdNome;
@@ -80,14 +83,14 @@ public class VendaDTO implements Serializable {
     public void setClienteClienteNomeCompleto(String clienteClienteNomeCompleto) {
         this.clienteClienteNomeCompleto = clienteClienteNomeCompleto;
     }
+    
+    public Produto getItem() {
+		return item;
+	}
 
-    public Long getItensId() {
-        return itensId;
-    }
-
-    public void setItensId(Long produtoId) {
-        this.itensId = produtoId;
-    }
+	public void setItem(Produto item) {
+		this.item = item;
+	}
 
 
     public String getItensProdNome() {
@@ -128,4 +131,6 @@ public class VendaDTO implements Serializable {
             ", formaDePagamento='" + formaDePagamento + "'" +
             '}';
     }
+
+	
 }

@@ -22,7 +22,7 @@
             "clienteCelular": "Celular",
             "clienteCpfCnpj": "Cpf/Cnpj",
             "clienteRua": "Rua",
-            "clienteCodPostal": "Código Postal",
+            "clienteCodPostal": "CEP",
             "clienteCidade": "Cidade",
             "clienteEstado": "Estado",
             "compras": "Compras",

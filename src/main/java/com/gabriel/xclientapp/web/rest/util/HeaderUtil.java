@@ -34,7 +34,7 @@ public class HeaderUtil {
     public static HttpHeaders createFailureAlert(String entityName, String errorKey, String defaultMessage) {
         log.error("Entity creation failed, {}", defaultMessage);
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-xclientappApp-error", "error." + errorKey);
+        headers.add("X-xclientappApp-error", "ERROR: " + defaultMessage);
         headers.add("X-xclientappApp-params", entityName);
         return headers;
     }

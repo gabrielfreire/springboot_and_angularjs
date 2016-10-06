@@ -2,8 +2,10 @@ package com.gabriel.xclientapp.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.gabriel.xclientapp.domain.Venda;
+import com.gabriel.xclientapp.service.ProdutoService;
 import com.gabriel.xclientapp.service.VendaService;
 import com.gabriel.xclientapp.web.rest.util.HeaderUtil;
+import com.gabriel.xclientapp.web.rest.dto.ProdutoDTO;
 import com.gabriel.xclientapp.web.rest.dto.VendaDTO;
 import com.gabriel.xclientapp.web.rest.mapper.VendaMapper;
 import org.slf4j.Logger;
@@ -38,6 +40,9 @@ public class VendaResource {
     @Inject
     private VendaMapper vendaMapper;
     
+    @Inject
+    private ProdutoService produtoService;
+    
     /**
      * POST  /vendas : Create a new venda.
      *
@@ -54,10 +59,18 @@ public class VendaResource {
         if (vendaDTO.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("venda", "idexists", "A new venda cannot already have an ID")).body(null);
         }
+        ProdutoDTO prod = produtoService.findOne(vendaDTO.getItem().getId());
         VendaDTO result = vendaService.save(vendaDTO);
-        return ResponseEntity.created(new URI("/api/vendas/" + result.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert("venda", result.getId().toString()))
-            .body(result);
+        
+        if(result == null){
+        	String msg = "Só existem " + prod.getProdQtd() + " do produto: " + prod.getProdNome() + ".";
+        	return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("venda", "insufficientAmountError", msg)).body(null);
+        }else{
+        	return ResponseEntity.created(new URI("/api/vendas/" + result.getId()))
+        	           .headers(HeaderUtil.createEntityCreationAlert("venda", result.getId().toString()))
+        	           .body(result);	
+        }
+       
     }
 
     /**

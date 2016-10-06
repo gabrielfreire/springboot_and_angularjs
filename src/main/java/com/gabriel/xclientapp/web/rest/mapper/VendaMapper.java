@@ -14,14 +14,14 @@ public interface VendaMapper {
 
     @Mapping(source = "cliente.id", target = "clienteId")
     @Mapping(source = "cliente.clienteNomeCompleto", target = "clienteClienteNomeCompleto")
-    @Mapping(source = "itens.id", target = "itensId")
     @Mapping(source = "itens.prodNome", target = "itensProdNome")
+    @Mapping(source = "itens", target = "item")
     VendaDTO vendaToVendaDTO(Venda venda);
 
     List<VendaDTO> vendasToVendaDTOs(List<Venda> vendas);
 
     @Mapping(source = "clienteId", target = "cliente")
-    @Mapping(source = "itensId", target = "itens")
+    @Mapping(source = "item", target = "itens")
     Venda vendaDTOToVenda(VendaDTO vendaDTO);
 
     List<Venda> vendaDTOsToVendas(List<VendaDTO> vendaDTOs);

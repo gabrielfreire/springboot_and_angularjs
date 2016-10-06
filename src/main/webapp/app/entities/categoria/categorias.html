@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="categoria.new" >
+                <button class="btn btn-primary" ui-sref="dashboard.novaCategoria" >
                     <span class="glyphicon glyphicon-plus"></span>
                     <span  translate="xclientappApp.categoria.home.createLabel">
                         Create new Categoria
@@ -30,19 +30,19 @@
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
-                                    ui-sref="categoria-detail({id:categoria.id})"
+                                    ui-sref="dashboard.detalheCategoria({id:categoria.id})"
                                     class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-eye-open"></span>
                                 <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
                             </button>
                             <button type="submit"
-                                    ui-sref="categoria.edit({id:categoria.id})"
+                                    ui-sref="dashboard.editarCategoria({id:categoria.id})"
                                     class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-pencil"></span>
                                 <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
                             </button>
                             <button type="submit"
-                                    ui-sref="categoria.delete({id:categoria.id})"
+                                    ui-sref="dashboard.deletarCategoria({id:categoria.id})"
                                     class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-remove-circle"></span>
                                 <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>

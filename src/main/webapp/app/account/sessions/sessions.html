@@ -50,6 +50,7 @@
                         <li role="presentation" ng-class="{active: vm.$state.is('dashboard.estoque') || vm.$state.is('dashboard.detalheProduto') || vm.$state.is('dashboard.novoProduto')}"><a ui-sref="dashboard.estoque" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-shopping-cart"></span> <span translate="global.menu.tabs.estoque">Estoque</span></a></li>
                         <li role="presentation" ng-class="{active: vm.$state.is('dashboard.clientes') || vm.$state.is('dashboard.detalheCliente') || vm.$state.is('dashboard.novoCliente')}"><a ui-sref="dashboard.clientes" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-user"></span> <span translate="global.menu.tabs.clientes">Clientes</span></a></li>
                         <li role="presentation" ng-class="{active: vm.$state.is('dashboard.vendas') || vm.$state.is('dashboard.detalheVenda') || vm.$state.is('dashboard.novoVenda')}"><a ui-sref="dashboard.vendas" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-usd"></span> <span translate="global.menu.tabs.vendas">Vendas</span></a></li>
+                        <li role="presentation" ng-class="{active: vm.$state.is('dashboard.categorias') || vm.$state.is('dashboard.detalheCategoria') || vm.$state.is('dashboard.novaCategoria')}"><a ui-sref="dashboard.categorias" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-wrench"></span> <span translate="global.menu.tabs.categoria">Categoria</span></a></li>
                         
                     </ul>
                 </div>
@@ -70,6 +71,10 @@
                         <div ui-view="content"></div>
                     </div>
                     <div ng-show="vm.$state.is('dashboard.vendas')">
+                        <!---->
+                        <div ui-view="content"></div>
+                    </div>
+                    <div ng-show="vm.$state.is('dashboard.categorias')">
                         <!---->
                         <div ui-view="content"></div>
                     </div>

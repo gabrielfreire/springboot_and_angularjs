@@ -42,6 +42,7 @@
                 "estoque": " Iventory",
                 "clientes": " Clients",
                 "vendas": " Sales",
+                "categoria": "Categories",
                 "produtos": " Products"
             }
         },
