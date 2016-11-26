@@ -60,7 +60,8 @@ module.exports = function (config) {
         exclude: ['src/test/javascript/e2e/**'],
 
         preprocessors: {
-            './**/*.js': sourcePreprocessors
+            './**/*.js': sourcePreprocessors,
+            './**/*.js': 'coverage'
         },
 
         reporters: ['dots', 'junit', 'coverage', 'progress'],
@@ -68,6 +69,14 @@ module.exports = function (config) {
         junitReporter: {
             outputFile: 'target/test-results/karma/TESTS-results.xml'
         },
+
+        plugins: [
+          'karma-jasmine',
+          'karma-coverage',
+          'karma-junit-reporter',
+          'karma-chrome-launcher',
+          'karma-phantomjs-launcher'
+        ],
 
         coverageReporter: {
             dir: 'target/test-results/coverage',
@@ -94,7 +103,9 @@ module.exports = function (config) {
         // - Safari (only Mac)
         // - PhantomJS
         // - IE (only Windows)
-        browsers: ['PhantomJS'],
+        browsers: ['Chrome'],
+
+       
 
         // Continuous Integration mode
         // if true, it capture browsers, run tests and exit

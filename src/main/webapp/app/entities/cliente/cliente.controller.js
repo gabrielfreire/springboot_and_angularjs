@@ -19,5 +19,10 @@
                 vm.clientes = result;
             });
         }
+
+        $(document).ready(function(){
+            $("#clientes").css("display", "none");
+            $("#clientes").fadeIn(500);
+        });
     }
 })();

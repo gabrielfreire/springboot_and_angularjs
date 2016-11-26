@@ -1,4 +1,4 @@
-<div>
+<div id="venda">
     <hr>
     <!--<h2 translate="xclientappApp.venda.home.title">Vendas</h2>-->
     <jhi-alert></jhi-alert>
@@ -35,10 +35,10 @@
                     <td>{{venda.pedidoQtd}}</td>
                     <td>{{venda.formaDePagamento}}</td>
                     <td>
-                        <a ui-sref="cliente-detail({id:venda.clienteId})">{{venda.clienteClienteNomeCompleto}}</a>
+                        <a ui-sref="dashboard.detalheCliente({id:venda.clienteId})">{{venda.clienteClienteNomeCompleto}}</a>
                     </td>
                     <td>
-                        <a ui-sref="produto-detail({id:venda.item.id})">{{venda.item.prodNome}}</a>
+                        <a ui-sref="dashboard.detalheProduto({id:venda.item.id})">{{venda.item.prodNome}}</a>
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

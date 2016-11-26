@@ -49,7 +49,6 @@ public class VendaService {
         int amountRequested = venda.getPedidoQtd();
         //if there is enough products on inventory sell, otherwise return null
         if(amountRequested > amountOfTheProduct){
-        	System.out.println("Não possui quantidade suficiente.\n" + produtoSold.getProdNome() + ": " + amountOfTheProduct + "\nVocê pediu: " + amountRequested);
         	log.debug("Request failed, not enough amount");
         	return null;
         }else{

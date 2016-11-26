@@ -5,9 +5,9 @@
         .module('xclientappApp')
         .controller('SessionsController', SessionsController);
 
-    SessionsController.$inject = ['Sessions', 'Principal', '$state', 'Produto', 'Venda', 'Cliente'];
+    SessionsController.$inject = ['$http', 'Sessions', 'Principal', '$state', 'Produto', 'Venda', 'Cliente'];
 
-    function SessionsController (Sessions, Principal, $state, Produto, Venda, Cliente) {
+    function SessionsController ($http, Sessions, Principal, $state, Produto, Venda, Cliente) {
         var vm = this;
 
         vm.produtos = Produto.query();
@@ -35,7 +35,7 @@
         Principal.identity().then(function(account) {
             vm.account = account;
         });
-
+       
         function invalidate (series) {
             Sessions.delete({series: encodeURIComponent(series)},
                 function () {
@@ -48,5 +48,13 @@
                     vm.error = 'ERROR';
                 });
         }
+        
+        $(document).ready(function(){
+            $("#panel").css("display", "none");
+            $("#panel").fadeIn(500);
+        }); 
+       
+        
+        
     }
 })();

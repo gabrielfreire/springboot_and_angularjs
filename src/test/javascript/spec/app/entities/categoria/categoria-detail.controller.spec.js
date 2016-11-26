@@ -37,6 +37,14 @@ describe('Controller Tests', function() {
                 expect($rootScope.$$listenerCount[eventType]).toBeUndefined();
             });
         });
+        //this code is for study purposes
+        describe("Testing the resource service from ANGULARJS", function(){
+
+            it("should say that $resource is available for me", inject(function($resource){
+                expect($resource).toBeDefined();
+            }));
+            
+        });
     });
 
 });

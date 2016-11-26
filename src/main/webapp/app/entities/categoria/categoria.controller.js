@@ -19,5 +19,10 @@
                 vm.categorias = result;
             });
         }
+        
+        $(document).ready(function(){
+            $("#categoria").css("display", "none");
+            $("#categoria").fadeIn(500);
+        });
     }
 })();

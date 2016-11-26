@@ -19,5 +19,10 @@
                 vm.vendas = result;
             });
         }
+
+        $(document).ready(function(){
+            $("#venda").css("display", "none");
+            $("#venda").fadeIn(500);
+        });
     }
 })();
