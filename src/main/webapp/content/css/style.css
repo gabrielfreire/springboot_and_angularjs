@@ -48,6 +48,22 @@ body{
 	padding-bottom: 40px;
 	color:white;
 }
+.credentialContainer{
+	margin-top: 6%;
+}
+.credentialContainer .label{
+	display: block;
+    margin: 5px;
+    font-size: 14pt;
+    text-align: left;
+    transition: 0.2s;
+}
+.credentialContainer .label:hover{
+	background-color: orange;
+}
+.credential-info{
+	color:white;
+}
 .center{
 	margin: 10% auto;	
 	

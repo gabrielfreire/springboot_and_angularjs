@@ -62,9 +62,25 @@
                 <div class="col-sm-12 center">
                     
                     <div ng-hide="vm.isAuthenticated()">
-                        <h1 class="mainTitle"><span translate="home.experimente">Experimente grátis por<br/> 15 dias!</span></h1>   
-                        <p class="landingContent text-center"><span translate="home.melhor">O melhor, mais rápido e mais simples<br/> controle de estoque para o seu negócio.</span></p>            
-                        <a ui-sref="register" class="btn btn-lg btn-danger"><strong><span translate="home.comece">Comece agora!</span></strong></a>
+                        <div class="col-md-12">
+                            <h1 class="mainTitle"><span translate="home.experimente">Experimente grátis por<br/> 15 dias!</span></h1>   
+                            <p class="landingContent text-center"><span translate="home.melhor">O melhor, mais rápido e mais simples<br/> controle de estoque para o seu negócio.</span></p>            
+                            <a ui-sref="register" class="btn btn-lg btn-danger"><strong><span translate="home.comece">Comece agora!</span></strong></a>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="credentialContainer">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"><span class="credential-info" translate="home.credenciais">Faça o login utilizando as seguintes credenciais:</span></h3>
+                                    </div>
+                                    <div class="panel-body"> 
+                                        <span class="label label-info">User: user</span>   
+                                        <span class="label label-info">Password: user</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                     <div ng-show="vm.isAuthenticated()">
                         <h1 class="mainTitle"><span translate="home.bemvindo" translate-values="{username: '{{vm.account.firstName + ' ' + vm.account.lastName}}'}">Bem-vindo {{vm.account.firstName}}</span></h1>  
