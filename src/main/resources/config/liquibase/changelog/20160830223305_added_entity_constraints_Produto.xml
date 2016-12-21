@@ -27,5 +27,6 @@
                                  referencedTableName="fornecedor"/>
 
 
+
     </changeSet>
 </databaseChangeLog>

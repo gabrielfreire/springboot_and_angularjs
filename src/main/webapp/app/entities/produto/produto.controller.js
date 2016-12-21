@@ -19,9 +19,10 @@
                 vm.produtos = result;
             });
         }
+
         $(document).ready(function(){
-            $("#produto").css("display", "none");
-            $("#produto").fadeIn(500);
-        });
+            $("#panel").css("display", "none");
+            $("#panel").fadeIn(500);
+        }); 
     }
 })();

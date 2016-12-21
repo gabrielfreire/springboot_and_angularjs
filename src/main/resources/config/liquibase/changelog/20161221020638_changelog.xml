@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="gabriel (generated)" id="1482286026709-1">
+        <addColumn tableName="produto">
+            <column name="data_validade" type="date"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="gabriel (generated)" id="1482286026709-2">
+        <addColumn tableName="produto">
+            <column name="qtd_minima" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="gabriel (generated)" id="1482286026709-3">
+        <addColumn tableName="produto">
+            <column name="valor_compra" type="decimal(10, 2)"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

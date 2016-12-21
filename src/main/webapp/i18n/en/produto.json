@@ -2,29 +2,33 @@
     "xclientappApp": {
         "produto" : {
             "home": {
-                "title": "Products",
-                "createLabel": "Create a new Product",
-                "createOrEditLabel": "Create or edit a Product",
-                "search": "Search for Product"
+                "title": "Produtos",
+                "createLabel": "Create a new Produto",
+                "createOrEditLabel": "Create or edit a Produto",
+                "search": "Search for Produto"
             },
-            "created": "A new Product was created with identifier {{ param }}",
-            "updated": "A Product was updated with identifier {{ param }}",
-            "deleted": "A Product was deleted with identifier {{ param }}",
+            "created": "A new Produto is created with identifier {{ param }}",
+            "updated": "A Produto is updated with identifier {{ param }}",
+            "deleted": "A Produto is deleted with identifier {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete Product {{ id }}?"
+                "question": "Are you sure you want to delete Produto {{ id }}?"
             },
             "detail": {
-                "title": "Product"
+                "title": "Produto"
             },
-            "prodCodigo": "Code",
-            "prodNome": "Name",
-            "prodMarca": "Brand",
-            "prodPreco": "Price",
-            "prodQtd": "Amount",
-            "prodCor": "Color",
+            "prodCodigo": "Prod Codigo",
+            "prodNome": "Prod Nome",
+            "prodMarca": "Prod Marca",
+            "prodPreco": "Prod Preco",
+            "prodQtd": "Prod Qtd",
+            "prodCor": "Prod Cor",
+            "valorCompra": "Valor Compra",
+            "qtdMinima": "Qtd Minima",
+            "dataValidade": "Data Validade",
             "user": "User",
-            "categoria": "Category",
-            "fornecedor": "Provider"
+            "categoria": "Categoria",
+            "fornecedor": "Fornecedor",
+            "fornecedor": "Fornecedor"
         }
     }
 }

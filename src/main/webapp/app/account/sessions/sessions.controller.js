@@ -14,17 +14,6 @@
         vm.vendas = Venda.query();
         vm.clientes = Cliente.query();
         vm.$state = $state;
-        vm.tab = 1;
-        vm.setTab = function(value){
-            return vm.tab = value;
-        }
-        vm.isSet = function(value){
-            if(vm.tab == value){
-                return true;
-            }else{
-                return false;
-            }
-        }
         vm.account = null;
         vm.error = null;
         vm.invalidate = invalidate;

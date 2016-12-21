@@ -77,6 +77,9 @@
                                 prodPreco: null,
                                 prodQtd: null,
                                 prodCor: null,
+                                valorCompra: null,
+                                qtdMinima: null,
+                                dataValidade: null,
                                 id: null
                             };
                         }

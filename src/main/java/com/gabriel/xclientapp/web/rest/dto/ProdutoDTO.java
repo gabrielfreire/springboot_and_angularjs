@@ -1,5 +1,6 @@
 package com.gabriel.xclientapp.web.rest.dto;
 
+import java.time.LocalDate;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -29,6 +30,12 @@ public class ProdutoDTO implements Serializable {
     private Integer prodQtd;
 
     private String prodCor;
+
+    private BigDecimal valorCompra;
+
+    private Integer qtdMinima;
+
+    private LocalDate dataValidade;
 
 
     private Long userId;
@@ -95,6 +102,27 @@ public class ProdutoDTO implements Serializable {
 
     public void setProdCor(String prodCor) {
         this.prodCor = prodCor;
+    }
+    public BigDecimal getValorCompra() {
+        return valorCompra;
+    }
+
+    public void setValorCompra(BigDecimal valorCompra) {
+        this.valorCompra = valorCompra;
+    }
+    public Integer getQtdMinima() {
+        return qtdMinima;
+    }
+
+    public void setQtdMinima(Integer qtdMinima) {
+        this.qtdMinima = qtdMinima;
+    }
+    public LocalDate getDataValidade() {
+        return dataValidade;
+    }
+
+    public void setDataValidade(LocalDate dataValidade) {
+        this.dataValidade = dataValidade;
     }
 
     public Long getUserId() {
@@ -179,6 +207,9 @@ public class ProdutoDTO implements Serializable {
             ", prodPreco='" + prodPreco + "'" +
             ", prodQtd='" + prodQtd + "'" +
             ", prodCor='" + prodCor + "'" +
+            ", valorCompra='" + valorCompra + "'" +
+            ", qtdMinima='" + qtdMinima + "'" +
+            ", dataValidade='" + dataValidade + "'" +
             '}';
     }
 }

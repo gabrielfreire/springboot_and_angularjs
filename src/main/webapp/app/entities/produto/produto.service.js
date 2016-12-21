@@ -4,9 +4,9 @@
         .module('xclientappApp')
         .factory('Produto', Produto);
 
-    Produto.$inject = ['$resource'];
+    Produto.$inject = ['$resource', 'DateUtils'];
 
-    function Produto ($resource) {
+    function Produto ($resource, DateUtils) {
         var resourceUrl =  'api/produtos/:id';
 
         return $resource(resourceUrl, {}, {
@@ -16,11 +16,25 @@
                 transformResponse: function (data) {
                     if (data) {
                         data = angular.fromJson(data);
+                        data.dataValidade = DateUtils.convertLocalDateFromServer(data.dataValidade);
                     }
                     return data;
                 }
             },
-            'update': { method:'PUT' }
+            'update': {
+                method: 'PUT',
+                transformRequest: function (data) {
+                    data.dataValidade = DateUtils.convertLocalDateToServer(data.dataValidade);
+                    return angular.toJson(data);
+                }
+            },
+            'save': {
+                method: 'POST',
+                transformRequest: function (data) {
+                    data.dataValidade = DateUtils.convertLocalDateToServer(data.dataValidade);
+                    return angular.toJson(data);
+                }
+            }
         });
     }
 })();

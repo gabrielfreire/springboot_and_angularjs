@@ -5,6 +5,7 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Objects;
 
 /**
@@ -40,6 +41,15 @@ public class Produto implements Serializable {
 
     @Column(name = "prod_cor")
     private String prodCor;
+
+    @Column(name = "valor_compra", precision=10, scale=2)
+    private BigDecimal valorCompra;
+
+    @Column(name = "qtd_minima")
+    private Integer qtdMinima;
+
+    @Column(name = "data_validade")
+    private LocalDate dataValidade;
 
     @ManyToOne
     private User user;
@@ -107,6 +117,30 @@ public class Produto implements Serializable {
         this.prodCor = prodCor;
     }
 
+    public BigDecimal getValorCompra() {
+        return valorCompra;
+    }
+
+    public void setValorCompra(BigDecimal valorCompra) {
+        this.valorCompra = valorCompra;
+    }
+
+    public Integer getQtdMinima() {
+        return qtdMinima;
+    }
+
+    public void setQtdMinima(Integer qtdMinima) {
+        this.qtdMinima = qtdMinima;
+    }
+
+    public LocalDate getDataValidade() {
+        return dataValidade;
+    }
+
+    public void setDataValidade(LocalDate dataValidade) {
+        this.dataValidade = dataValidade;
+    }
+
     public User getUser() {
         return user;
     }
@@ -162,6 +196,9 @@ public class Produto implements Serializable {
             ", prodPreco='" + prodPreco + "'" +
             ", prodQtd='" + prodQtd + "'" +
             ", prodCor='" + prodCor + "'" +
+            ", valorCompra='" + valorCompra + "'" +
+            ", qtdMinima='" + qtdMinima + "'" +
+            ", dataValidade='" + dataValidade + "'" +
             '}';
     }
 }

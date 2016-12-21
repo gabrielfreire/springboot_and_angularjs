@@ -26,6 +26,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -59,6 +61,15 @@ public class ProdutoResourceIntTest {
     private static final Integer UPDATED_PROD_QTD = 2;
     private static final String DEFAULT_PROD_COR = "AAAAA";
     private static final String UPDATED_PROD_COR = "BBBBB";
+
+    private static final BigDecimal DEFAULT_VALOR_COMPRA = new BigDecimal(1);
+    private static final BigDecimal UPDATED_VALOR_COMPRA = new BigDecimal(2);
+
+    private static final Integer DEFAULT_QTD_MINIMA = 1;
+    private static final Integer UPDATED_QTD_MINIMA = 2;
+
+    private static final LocalDate DEFAULT_DATA_VALIDADE = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_DATA_VALIDADE = LocalDate.now(ZoneId.systemDefault());
 
     @Inject
     private ProdutoRepository produtoRepository;
@@ -99,6 +110,9 @@ public class ProdutoResourceIntTest {
         produto.setProdPreco(DEFAULT_PROD_PRECO);
         produto.setProdQtd(DEFAULT_PROD_QTD);
         produto.setProdCor(DEFAULT_PROD_COR);
+        produto.setValorCompra(DEFAULT_VALOR_COMPRA);
+        produto.setQtdMinima(DEFAULT_QTD_MINIMA);
+        produto.setDataValidade(DEFAULT_DATA_VALIDADE);
     }
 
     @Test
@@ -124,6 +138,9 @@ public class ProdutoResourceIntTest {
         assertThat(testProduto.getProdPreco()).isEqualTo(DEFAULT_PROD_PRECO);
         assertThat(testProduto.getProdQtd()).isEqualTo(DEFAULT_PROD_QTD);
         assertThat(testProduto.getProdCor()).isEqualTo(DEFAULT_PROD_COR);
+        assertThat(testProduto.getValorCompra()).isEqualTo(DEFAULT_VALOR_COMPRA);
+        assertThat(testProduto.getQtdMinima()).isEqualTo(DEFAULT_QTD_MINIMA);
+        assertThat(testProduto.getDataValidade()).isEqualTo(DEFAULT_DATA_VALIDADE);
     }
 
     @Test
@@ -199,7 +216,10 @@ public class ProdutoResourceIntTest {
                 .andExpect(jsonPath("$.[*].prodMarca").value(hasItem(DEFAULT_PROD_MARCA.toString())))
                 .andExpect(jsonPath("$.[*].prodPreco").value(hasItem(DEFAULT_PROD_PRECO.intValue())))
                 .andExpect(jsonPath("$.[*].prodQtd").value(hasItem(DEFAULT_PROD_QTD)))
-                .andExpect(jsonPath("$.[*].prodCor").value(hasItem(DEFAULT_PROD_COR.toString())));
+                .andExpect(jsonPath("$.[*].prodCor").value(hasItem(DEFAULT_PROD_COR.toString())))
+                .andExpect(jsonPath("$.[*].valorCompra").value(hasItem(DEFAULT_VALOR_COMPRA.intValue())))
+                .andExpect(jsonPath("$.[*].qtdMinima").value(hasItem(DEFAULT_QTD_MINIMA)))
+                .andExpect(jsonPath("$.[*].dataValidade").value(hasItem(DEFAULT_DATA_VALIDADE.toString())));
     }
 
     @Test
@@ -218,7 +238,10 @@ public class ProdutoResourceIntTest {
             .andExpect(jsonPath("$.prodMarca").value(DEFAULT_PROD_MARCA.toString()))
             .andExpect(jsonPath("$.prodPreco").value(DEFAULT_PROD_PRECO.intValue()))
             .andExpect(jsonPath("$.prodQtd").value(DEFAULT_PROD_QTD))
-            .andExpect(jsonPath("$.prodCor").value(DEFAULT_PROD_COR.toString()));
+            .andExpect(jsonPath("$.prodCor").value(DEFAULT_PROD_COR.toString()))
+            .andExpect(jsonPath("$.valorCompra").value(DEFAULT_VALOR_COMPRA.intValue()))
+            .andExpect(jsonPath("$.qtdMinima").value(DEFAULT_QTD_MINIMA))
+            .andExpect(jsonPath("$.dataValidade").value(DEFAULT_DATA_VALIDADE.toString()));
     }
 
     @Test
@@ -245,6 +268,9 @@ public class ProdutoResourceIntTest {
         updatedProduto.setProdPreco(UPDATED_PROD_PRECO);
         updatedProduto.setProdQtd(UPDATED_PROD_QTD);
         updatedProduto.setProdCor(UPDATED_PROD_COR);
+        updatedProduto.setValorCompra(UPDATED_VALOR_COMPRA);
+        updatedProduto.setQtdMinima(UPDATED_QTD_MINIMA);
+        updatedProduto.setDataValidade(UPDATED_DATA_VALIDADE);
         ProdutoDTO produtoDTO = produtoMapper.produtoToProdutoDTO(updatedProduto);
 
         restProdutoMockMvc.perform(put("/api/produtos")
@@ -262,6 +288,9 @@ public class ProdutoResourceIntTest {
         assertThat(testProduto.getProdPreco()).isEqualTo(UPDATED_PROD_PRECO);
         assertThat(testProduto.getProdQtd()).isEqualTo(UPDATED_PROD_QTD);
         assertThat(testProduto.getProdCor()).isEqualTo(UPDATED_PROD_COR);
+        assertThat(testProduto.getValorCompra()).isEqualTo(UPDATED_VALOR_COMPRA);
+        assertThat(testProduto.getQtdMinima()).isEqualTo(UPDATED_QTD_MINIMA);
+        assertThat(testProduto.getDataValidade()).isEqualTo(UPDATED_DATA_VALIDADE);
     }
 
     @Test

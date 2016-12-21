@@ -12,6 +12,8 @@
 
         vm.produto = entity;
         vm.clear = clear;
+        vm.datePickerOpenStatus = {};
+        vm.openCalendar = openCalendar;
         vm.save = save;
         vm.users = User.query();
         vm.categorias = Categoria.query();
@@ -44,6 +46,10 @@
             vm.isSaving = false;
         }
 
+        vm.datePickerOpenStatus.dataValidade = false;
 
+        function openCalendar (date) {
+            vm.datePickerOpenStatus[date] = true;
+        }
     }
 })();

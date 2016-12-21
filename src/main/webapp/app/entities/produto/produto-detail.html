@@ -28,6 +28,18 @@
         <dd>
             <span>{{vm.produto.prodCor}}</span>
         </dd>
+        <dt><span translate="xclientappApp.produto.valorCompra">Valor Compra</span></dt>
+        <dd>
+            <span>{{vm.produto.valorCompra}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.produto.qtdMinima">Qtd Minima</span></dt>
+        <dd>
+            <span>{{vm.produto.qtdMinima}}</span>
+        </dd>
+        <dt><span translate="xclientappApp.produto.dataValidade">Data Validade</span></dt>
+        <dd>
+            <span>{{vm.produto.dataValidade | date:'mediumDate'}}</span>
+        </dd>
         <dt><span translate="xclientappApp.produto.user">User</span></dt>
         <dd>
             {{vm.produto.userLogin}}
@@ -40,8 +52,10 @@
         <dd>
             <a ui-sref="fornecedor-detail({id:vm.produto.fornecedorId})">{{vm.produto.fornecedorFornNome}}</a>
         </dd>
-
-
+        <dt><span translate="xclientappApp.produto.fornecedor">Fornecedor</span></dt>
+        <dd>
+            <a ui-sref="fornecedor-detail({id:vm.produto.fornecedorId})">{{vm.produto.fornecedorId}}</a>
+        </dd>
     </dl>
 
     <button type="submit"

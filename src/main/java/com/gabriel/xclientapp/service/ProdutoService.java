@@ -29,6 +29,9 @@ public class ProdutoService {
     @Inject
     private ProdutoMapper produtoMapper;
     
+    @Inject
+    private UserService userService;
+    
     /**
      * Save a produto.
      * 
@@ -38,6 +41,7 @@ public class ProdutoService {
     public ProdutoDTO save(ProdutoDTO produtoDTO) {
         log.debug("Request to save Produto : {}", produtoDTO);
         Produto produto = produtoMapper.produtoDTOToProduto(produtoDTO);
+        produto.setUser(userService.getUserWithAuthorities());
         produto = produtoRepository.save(produto);
         ProdutoDTO result = produtoMapper.produtoToProdutoDTO(produto);
         return result;

@@ -45,6 +45,18 @@
                 <constraints nullable="true" />
             </column>
             
+            <column name="valor_compra" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="qtd_minima" type="integer">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="data_validade" type="date">
+                <constraints nullable="true" />
+            </column>
+            
             <column name="user_id" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -56,6 +68,7 @@
             <column name="fornecedor_id" type="bigint">
                 <constraints nullable="true" />
             </column>
+
 
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
         </createTable>
