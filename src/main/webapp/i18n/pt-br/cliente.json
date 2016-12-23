@@ -7,9 +7,9 @@
                 "createOrEditLabel": "Registrar ou editar Cliente",
                 "search": "Pesquisar por Cliente"
             },
-            "created": "Um novo cliente foi criado com o identificador {{ param }}",
-            "updated": "Um cliente foi atualizado com o identificador {{ param }}",
-            "deleted": "Um cliente foi deletado com o identificador {{ param }}",
+            "created": "Um novo cliente foi criado com sucesso",
+            "updated": "Um cliente foi atualizado com sucesso",
+            "deleted": "Um cliente foi deletado com sucesso",
             "delete": {
                 "question": "Tem certeza de que deseja excluir este Cliente {{ id }}?"
             },
@@ -20,11 +20,13 @@
             "clienteEmail": "E-mail",
             "clienteTelefone": "Telefone",
             "clienteCelular": "Celular",
-            "clienteCpfCnpj": "Cpf/Cnpj",
+            "clienteCpfCnpj": "CPF/CNPJ",
             "clienteRua": "Rua",
             "clienteCodPostal": "CEP",
             "clienteCidade": "Cidade",
             "clienteEstado": "Estado",
+            "numero": "Número",
+            "complemento": "Complemento",
             "compras": "Compras",
             "user": "User"
         }

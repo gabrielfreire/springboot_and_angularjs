@@ -18,7 +18,7 @@
         </dd>
         <dt><span translate="xclientappApp.produto.prodPreco">Prod Preco</span></dt>
         <dd>
-            <span>{{vm.produto.prodPreco}}</span>
+            <span>{{vm.produto.prodPreco | currency}}</span>
         </dd>
         <dt><span translate="xclientappApp.produto.prodQtd">Prod Qtd</span></dt>
         <dd>
@@ -30,7 +30,7 @@
         </dd>
         <dt><span translate="xclientappApp.produto.valorCompra">Valor Compra</span></dt>
         <dd>
-            <span>{{vm.produto.valorCompra}}</span>
+            <span>{{vm.produto.valorCompra | currency}}</span>
         </dd>
         <dt><span translate="xclientappApp.produto.qtdMinima">Qtd Minima</span></dt>
         <dd>
@@ -51,10 +51,6 @@
         <dt><span translate="xclientappApp.produto.fornecedor">Fornecedor</span></dt>
         <dd>
             <a ui-sref="fornecedor-detail({id:vm.produto.fornecedorId})">{{vm.produto.fornecedorFornNome}}</a>
-        </dd>
-        <dt><span translate="xclientappApp.produto.fornecedor">Fornecedor</span></dt>
-        <dd>
-            <a ui-sref="fornecedor-detail({id:vm.produto.fornecedorId})">{{vm.produto.fornecedorId}}</a>
         </dd>
     </dl>
 

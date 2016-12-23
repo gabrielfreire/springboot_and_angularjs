@@ -39,9 +39,16 @@ public class ClienteDTO implements Serializable {
 
     @NotNull
     private String clienteEstado;
+    
+    @NotNull
+    private String numero;
+    
+    @NotNull
+    private String complemento;
 
 
-    private Long userId;
+
+	private Long userId;
     
 
     private String userLogin;
@@ -133,6 +140,23 @@ public class ClienteDTO implements Serializable {
     public void setUserLogin(String userLogin) {
         this.userLogin = userLogin;
     }
+    
+    public String getNumero() {
+		return numero;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	public String getComplemento() {
+		return complemento;
+	}
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
+
 
     @Override
     public boolean equals(Object o) {

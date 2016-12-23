@@ -56,8 +56,18 @@ public class Cliente implements Serializable {
     @NotNull
     @Column(name = "cliente_estado", nullable = false)
     private String clienteEstado;
+    
+    @NotNull
+    @Column(name = "cliente_numero", nullable = false)
+    private String numero;
+    
+    @NotNull
+    @Column(name = "cliente_complemento", nullable = false)
+    private String complemento;
 
-    @OneToMany(mappedBy = "cliente")
+   
+
+	@OneToMany(mappedBy = "cliente")
     @JsonIgnore
     private Set<Venda> compras = new HashSet<>();
 
@@ -159,6 +169,22 @@ public class Cliente implements Serializable {
     public void setUser(User user) {
         this.user = user;
     }
+    
+    public String getNumero() {
+		return numero;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	public String getComplemento() {
+		return complemento;
+	}
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
 
     @Override
     public boolean equals(Object o) {

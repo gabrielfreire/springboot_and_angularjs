@@ -29,7 +29,8 @@
                     <th><span translate="xclientappApp.cliente.clienteCodPostal">Cliente Cod Postal</span></th>
                     <th><span translate="xclientappApp.cliente.clienteCidade">Cliente Cidade</span></th>
                     <th><span translate="xclientappApp.cliente.clienteEstado">Cliente Estado</span></th>
-                    <th><span translate="xclientappApp.cliente.user">User</span></th>
+                    <th><span translate="xclientappApp.cliente.numero">Número</span></th>
+                    <th><span translate="xclientappApp.cliente.complemento">Complemento</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -45,9 +46,8 @@
                     <td>{{cliente.clienteCodPostal}}</td>
                     <td>{{cliente.clienteCidade}}</td>
                     <td>{{cliente.clienteEstado}}</td>
-                    <td>
-                        {{cliente.userLogin}}
-                    </td>
+                    <td>{{cliente.numero}}</td>
+                    <td>{{cliente.complemento}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

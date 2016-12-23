@@ -8,111 +8,106 @@
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
-        <div class="form-group" ng-show="vm.cliente.id">
-            <label for="id" translate="global.field.id">ID</label>
-            <input type="text" class="form-control" id="id" name="id"
-                    ng-model="vm.cliente.id" readonly />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="xclientappApp.cliente.clienteNomeCompleto" for="field_clienteNomeCompleto">Cliente Nome Completo</label>
-            <input type="text" class="form-control" name="clienteNomeCompleto" id="field_clienteNomeCompleto"
-                    ng-model="vm.cliente.clienteNomeCompleto"
-                    required />
-            <div ng-show="editForm.clienteNomeCompleto.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.clienteNomeCompleto.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="xclientappApp.cliente.clienteEmail" for="field_clienteEmail">Cliente Email</label>
-            <input type="text" class="form-control" name="clienteEmail" id="field_clienteEmail"
-                    ng-model="vm.cliente.clienteEmail"
-                    required />
-            <div ng-show="editForm.clienteEmail.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.clienteEmail.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="xclientappApp.cliente.clienteTelefone" for="field_clienteTelefone">Cliente Telefone</label>
-            <input type="text" class="form-control" name="clienteTelefone" id="field_clienteTelefone"
-                    ng-model="vm.cliente.clienteTelefone"
-                    required />
-            <div ng-show="editForm.clienteTelefone.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.clienteTelefone.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="xclientappApp.cliente.clienteCelular" for="field_clienteCelular">Cliente Celular</label>
-            <input type="text" class="form-control" name="clienteCelular" id="field_clienteCelular"
-                    ng-model="vm.cliente.clienteCelular"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="xclientappApp.cliente.clienteCpfCnpj" for="field_clienteCpfCnpj">Cliente Cpf Cnpj</label>
-            <input type="text" class="form-control" name="clienteCpfCnpj" id="field_clienteCpfCnpj"
-                    ng-model="vm.cliente.clienteCpfCnpj"
-                    required />
-            <div ng-show="editForm.clienteCpfCnpj.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.clienteCpfCnpj.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="xclientappApp.cliente.clienteRua" for="field_clienteRua">Cliente Rua</label>
-            <input type="text" class="form-control" name="clienteRua" id="field_clienteRua"
-                    ng-model="vm.cliente.clienteRua"
-                    required />
-            <div ng-show="editForm.clienteRua.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.clienteRua.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="xclientappApp.cliente.clienteCodPostal" for="field_clienteCodPostal">Cliente Cod Postal</label>
-            <input type="text" class="form-control" name="clienteCodPostal" id="field_clienteCodPostal"
-                    ng-model="vm.cliente.clienteCodPostal"
-                    required />
-            <div ng-show="editForm.clienteCodPostal.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.clienteCodPostal.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="xclientappApp.cliente.clienteCidade" for="field_clienteCidade">Cliente Cidade</label>
-            <input type="text" class="form-control" name="clienteCidade" id="field_clienteCidade"
-                    ng-model="vm.cliente.clienteCidade"
-                    required />
-            <div ng-show="editForm.clienteCidade.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.clienteCidade.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="xclientappApp.cliente.clienteEstado" for="field_clienteEstado">Cliente Estado</label>
-            <input type="text" class="form-control" name="clienteEstado" id="field_clienteEstado"
-                    ng-model="vm.cliente.clienteEstado"
-                    required />
-            <div ng-show="editForm.clienteEstado.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.clienteEstado.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group" ng-show="vm.cliente.id">
+                        <label for="id" translate="global.field.id">ID</label>
+                        <input type="text" class="form-control" id="id" name="id"
+                                ng-model="vm.cliente.id" readonly />
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label" translate="xclientappApp.cliente.clienteNomeCompleto" for="field_clienteNomeCompleto">Cliente Nome Completo</label>
+                            <input type="text" ng-class="{'ng-invalid': editForm.complemento.$error.required}" class="form-control" name="clienteNomeCompleto" id="field_clienteNomeCompleto"
+                                    ng-model="vm.cliente.clienteNomeCompleto" placeholder="Nome completo"
+                                    required />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label" translate="xclientappApp.cliente.clienteEmail" for="field_clienteEmail">Cliente Email</label>
+                            <input type="text" ng-class="{'ng-invalid': editForm.complemento.$error.required}" class="form-control" name="clienteEmail" id="field_clienteEmail"
+                                    ng-model="vm.cliente.clienteEmail" placeholder="E-mail"
+                                    required />
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label" translate="xclientappApp.cliente.clienteTelefone" for="field_clienteTelefone">Cliente Telefone</label>
+                            <input type="text" ng-class="{'ng-invalid': editForm.complemento.$error.required}" class="form-control" name="clienteTelefone" id="field_clienteTelefone"
+                                    ng-model="vm.cliente.clienteTelefone" placeholder="Telefone"
+                                    required />
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label" translate="xclientappApp.cliente.clienteCelular" for="field_clienteCelular">Cliente Celular</label>
+                            <input type="text" class="form-control" name="clienteCelular" id="field_clienteCelular"
+                                    ng-model="vm.cliente.clienteCelular" placeholder="Celular"
+                                     />
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label" translate="xclientappApp.cliente.clienteCpfCnpj" for="field_clienteCpfCnpj">Cliente Cpf Cnpj</label>
+                            <input type="text" ng-class="{'ng-invalid': editForm.complemento.$error.required}" class="form-control" name="clienteCpfCnpj" id="field_clienteCpfCnpj"
+                                    ng-model="vm.cliente.clienteCpfCnpj" placeholder="CPF ou CNPJ"
+                                    required />
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label" translate="xclientappApp.cliente.clienteCodPostal" for="field_clienteCodPostal">CEP</label>
+                            <input type="text" ng-class="{'ng-invalid': editForm.clienteCodPostal.$error.required && editForm.clienteCodPostal.$dirty}" class="form-control" name="clienteCodPostal" id="field_clienteCodPostal"
+                                    ng-model="vm.cliente.clienteCodPostal" placeholder="CEP"
+                                    required />
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label class="control-label" translate="xclientappApp.cliente.clienteRua" for="field_clienteRua">Cliente Rua</label>
+                            <input type="text" ng-class="{'ng-invalid': editForm.clienteRua.$error.required}" class="form-control" name="clienteRua" id="field_clienteRua" placeholder="Rua"
+                                    ng-model="vm.cliente.clienteRua"
+                                    required />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label class="control-label" translate="xclientappApp.cliente.clienteCidade" for="field_clienteCidade">Cliente Cidade</label>
+                            <input type="text" ng-class="{'ng-invalid': editForm.clienteCidade.$error.required}" class="form-control" name="clienteCidade" id="field_clienteCidade"
+                                    ng-model="vm.cliente.clienteCidade" placeholder="Cidade"
+                                    required />
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label" translate="xclientappApp.cliente.clienteEstado" for="field_clienteEstado">Cliente Estado</label>
+                            <input type="text" ng-class="{'ng-invalid': editForm.clienteEstado.$error.required}" class="form-control" name="clienteEstado" id="field_clienteEstado" placeholder="Estado"
+                                    ng-model="vm.cliente.clienteEstado"
+                                    required />
+    
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label" translate="xclientappApp.cliente.numero" for="field_numero">Número</label>
+                            <input type="text" ng-class="{'ng-invalid': editForm.numero.$error.required}" class="form-control" name="numero" id="field_numero"
+                                    ng-model="vm.cliente.numero" placeholder="Número"
+                                    required />
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label" translate="xclientappApp.cliente.complemento" for="field_complemento">Complemento</label>
+                            <input type="text" ng-class="{'ng-invalid': editForm.complemento.$error.required && editForm.complemento.$dirty}" class="form-control" name="complemento" id="field_complemento"
+                                    ng-model="vm.cliente.complemento" placeholder="Complemento"
+                                    required />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

@@ -3,20 +3,20 @@
         "categoria" : {
             "home": {
                 "title": "Categorias",
-                "createLabel": "Criar novo Categoria",
+                "createLabel": "Criar nova Categoria",
                 "createOrEditLabel": "Criar ou editar Categoria",
                 "search": "Pesquisar por Categoria"
             },
-            "created": "Um novo Categoria é criado com o identificador {{ param }}",
-            "updated": "Um Categoria é atualizado com o identificador {{ param }}",
-            "deleted": "Um Categoria é deletado com o identificador {{ param }}",
+            "created": "Uma nova Categoria foi criada com o sucesso!",
+            "updated": "Uma Categoria foi atualizada com o sucesso!",
+            "deleted": "Uma Categoria foi deletada com o sucesso!",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Categoria {{ id }}?"
+                "question": "Tem certeza de que deseja excluir esta Categoria {{ id }}?"
             },
             "detail": {
                 "title": "Categoria"
             },
-            "catNome": "Cat Nome"
+            "catNome": "Nome da Categoria"
         }
     }
 }

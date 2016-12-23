@@ -259,6 +259,8 @@
                                 clienteCodPostal: null,
                                 clienteCidade: null,
                                 clienteEstado: null,
+                                numero: null,
+                                complemento:null,
                                 id: null
                             };
                         }

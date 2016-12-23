@@ -29,6 +29,9 @@ public class ClienteService {
     @Inject
     private ClienteMapper clienteMapper;
     
+    @Inject
+    private UserService userService;
+    
     /**
      * Save a cliente.
      * 
@@ -38,6 +41,9 @@ public class ClienteService {
     public ClienteDTO save(ClienteDTO clienteDTO) {
         log.debug("Request to save Cliente : {}", clienteDTO);
         Cliente cliente = clienteMapper.clienteDTOToCliente(clienteDTO);
+        
+        cliente.setUser(userService.getUserWithAuthorities());
+        
         cliente = clienteRepository.save(cliente);
         ClienteDTO result = clienteMapper.clienteToClienteDTO(cliente);
         return result;
