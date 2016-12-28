@@ -21,8 +21,8 @@
         }
 
         $(document).ready(function(){
-            $("#panel").css("display", "none");
-            $("#panel").fadeIn(500);
+            $("#produtos").css("display", "none");
+            $("#produtos").fadeIn(500);
         }); 
     }
 })();

@@ -21,14 +21,14 @@
                             <label class="control-label" translate="xclientappApp.produto.prodCodigo" for="field_prodCodigo">Prod Codigo</label>
                             <input type="text" class="form-control" name="prodCodigo" id="field_prodCodigo"
                                     ng-model="vm.produto.prodCodigo"
-                                     />
+                                     / placeholder="Código do produto">
                         </div>
                     </div>
                     <div class="col-md-8 col-sm-6 col-xs-12">
                         <div class="form-group">
                             <label class="control-label" translate="xclientappApp.produto.prodNome" for="field_prodNome">Prod Nome</label>
                             <input type="text" ng-class="{'ng-invalid':editForm.prodQtd.$error.required}" class="form-control" name="prodNome" id="field_prodNome"
-                                    ng-model="vm.produto.prodNome"
+                                    ng-model="vm.produto.prodNome" placeholder="Nome do produto"
                                     required />
                             
                         </div>
@@ -37,7 +37,7 @@
                         <div class="form-group">
                             <label class="control-label" translate="xclientappApp.produto.prodMarca" for="field_prodMarca">Prod Marca</label>
                             <input type="text" class="form-control" name="prodMarca" id="field_prodMarca"
-                                    ng-model="vm.produto.prodMarca"
+                                    ng-model="vm.produto.prodMarca" placeholder="Marca do produto"
                                      />
                         </div>
                     </div>
@@ -45,8 +45,8 @@
                         <div class="form-group">
                             <label class="control-label" translate="xclientappApp.produto.prodPreco" for="field_prodPreco">Prod Preco</label>
                             <input type="number" ng-class="{'ng-invalid':editForm.prodQtd.$error.required}" class="form-control" name="prodPreco" id="field_prodPreco"
-                                    ng-model="vm.produto.prodPreco"
-                                    required placeholder="R$10,00"/>
+                                    ng-model="vm.produto.prodPreco" 
+                                    required placeholder="R$"/>
                             <div ng-show="editForm.prodPreco.$invalid">
                                 <p class="help-block"
                                     ng-show="editForm.prodPreco.$error.number" translate="entity.validation.number">
@@ -59,7 +59,7 @@
                         <div class="form-group">
                             <label class="control-label" translate="xclientappApp.produto.valorCompra" for="field_valorCompra">Valor Compra</label>
                             <input type="number" class="form-control" name="valorCompra" id="field_valorCompra"
-                                    ng-model="vm.produto.valorCompra" placeholder="R$10,00"
+                                    ng-model="vm.produto.valorCompra" placeholder="R$"
                                      />
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                         <div class="form-group">
                             <label class="control-label" translate="xclientappApp.produto.prodCor" for="field_prodCor">Prod Cor</label>
                             <input type="text" class="form-control" name="prodCor" id="field_prodCor"
-                                    ng-model="vm.produto.prodCor"
+                                    ng-model="vm.produto.prodCor" placeholder="Cor do produto"
                                      />
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                         <div class="form-group">
                             <label class="control-label" translate="xclientappApp.produto.prodQtd" for="field_prodQtd">Prod Qtd</label>
                             <input type="number" ng-class="{'ng-invalid':editForm.prodQtd.$error.required}" class="form-control" name="prodQtd" id="field_prodQtd"
-                                    ng-model="vm.produto.prodQtd"
+                                    ng-model="vm.produto.prodQtd" placeholder="Quantidade em estoque"
                                     required />
                             <div ng-show="editForm.prodQtd.$invalid">
                                 <p class="help-block"
@@ -90,7 +90,7 @@
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="form-group">
                             <label class="control-label" translate="xclientappApp.produto.qtdMinima" for="field_qtdMinima">Qtd Minima</label>
-                            <input type="number" class="form-control" name="qtdMinima" id="field_qtdMinima"
+                            <input type="number" class="form-control" name="qtdMinima" id="field_qtdMinima" placeholder="Quantidade mínima de reposição"
                                     ng-model="vm.produto.qtdMinima"
                                      />
                         </div>
@@ -99,7 +99,7 @@
                         <div class="form-group">
                             <label class="control-label" translate="xclientappApp.produto.dataValidade" for="field_dataValidade">Data Validade</label>
                                 <div class="input-group">
-                                    <input id="field_dataValidade" type="text" class="form-control" name="dataValidade" uib-datepicker-popup="{{dateformat}}" ng-model="vm.produto.dataValidade" is-open="vm.datePickerOpenStatus.dataValidade"
+                                    <input id="field_dataValidade" type="text" class="form-control" name="dataValidade" uib-datepicker-popup="{{dateformat}}" ng-model="vm.produto.dataValidade" is-open="vm.datePickerOpenStatus.dataValidade" placeholder="dd/MM/yyyy"
                                     />
                                     <span class="input-group-btn">
                                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataValidade')"><i class="glyphicon glyphicon-calendar"></i></button>
@@ -111,7 +111,7 @@
                         <div class="form-group">
                             <label translate="xclientappApp.produto.categoria" for="field_categoria">Categoria</label>
                             <select class="form-control" id="field_categoria" name="categoria" ng-model="vm.produto.categoriaId" ng-options="categoria.id as categoria.catNome for categoria in vm.categorias"            >
-                                <option value=""></option>
+                                <option value="">Selecione uma categoria</option>
                             </select>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
                         <div class="form-group">
                             <label translate="xclientappApp.produto.fornecedor" for="field_fornecedor">Fornecedor</label>
                             <select class="form-control" id="field_fornecedor" name="fornecedor" ng-model="vm.produto.fornecedorId" ng-options="fornecedor.id as fornecedor.fornNome for fornecedor in vm.fornecedors"            >
-                                <option value=""></option>
+                                <option value="">Selecione um fornecedor</option>
                             </select>
                         </div>
                     </div>

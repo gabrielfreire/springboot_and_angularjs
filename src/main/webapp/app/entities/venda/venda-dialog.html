@@ -8,67 +8,64 @@
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
-        <div class="form-group" ng-show="vm.venda.id">
-            <label for="id" translate="global.field.id">ID</label>
-            <input type="text" class="form-control" id="id" name="id"
-                    ng-model="vm.venda.id" readonly />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="xclientappApp.venda.pedidoData" for="field_pedidoData">Pedido Data</label>
-                <div class="input-group">
-                    <input id="field_pedidoData" type="text" class="form-control" name="pedidoData" datetime-picker="{{dateformat}}" ng-model="vm.venda.pedidoData" is-open="vm.datePickerOpenStatus.pedidoData"
-                    required  />
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('pedidoData')"><i class="glyphicon glyphicon-calendar"></i></button>
-                    </span>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group" ng-show="vm.venda.id">
+                        <label for="id" translate="global.field.id">ID</label>
+                        <input type="text" class="form-control" id="id" name="id"
+                                ng-model="vm.venda.id" readonly />
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label" translate="xclientappApp.venda.pedidoData" for="field_pedidoData">Pedido Data</label>
+                                <div class="input-group">
+                                    <input id="field_pedidoData" type="text" class="form-control" name="pedidoData" datetime-picker="{{dateformat}}" ng-model="vm.venda.pedidoData" is-open="vm.datePickerOpenStatus.pedidoData" placeholder="dd/MM/yyyy" 
+                                    required  />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('pedidoData')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label" translate="xclientappApp.venda.pedidoQtd" for="field_pedidoQtd">Pedido Qtd</label>
+                            <input type="number" class="form-control" name="pedidoQtd" id="field_pedidoQtd"
+                                    ng-model="vm.venda.pedidoQtd" placeholder="Quantidade"
+                                    required />
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label class="control-label" translate="xclientappApp.venda.formaDePagamento" for="field_formaDePagamento">Forma De Pagamento</label>
+                            <input type="text" class="form-control" name="formaDePagamento" id="field_formaDePagamento"
+                                    ng-model="vm.venda.formaDePagamento" placeholder="Forma de pagamento"
+                                     />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="form-group">
+                            <label translate="xclientappApp.venda.cliente" for="field_cliente">Cliente</label>
+                            <select class="form-control" id="field_cliente" name="cliente" ng-model="vm.venda.clienteId" ng-options="cliente.id as cliente.clienteNomeCompleto for cliente in vm.clientes"            >
+                                <option value="">Selecione um Cliente</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="form-group">
+                            <label translate="xclientappApp.venda.itens" for="field_itens">Itens</label>
+                            <select class="form-control" id="field_itens" name="itens" ng-model="vm.venda.item.id" ng-options="produto.id as produto.prodNome for produto in vm.produtos"            >
+                                <option value="">Selecione o produto</option>
+                            </select>
+                        </div>
+                        <div ng-if="$error">
+                            <h4>Este item não possui todas essas unidades</h4>
+                        </div>
+                    </div>
                 </div>
-            <div ng-show="editForm.pedidoData.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.pedidoData.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.pedidoData.$error.ZonedDateTimelocal" translate="entity.validation.ZonedDateTimelocal">
-                    This field should be a date and time.
-                </p>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="xclientappApp.venda.pedidoQtd" for="field_pedidoQtd">Pedido Qtd</label>
-            <input type="number" class="form-control" name="pedidoQtd" id="field_pedidoQtd"
-                    ng-model="vm.venda.pedidoQtd"
-                    required />
-            <div ng-show="editForm.pedidoQtd.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.pedidoQtd.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.pedidoQtd.$error.number" translate="entity.validation.number">
-                    This field should be a number.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="xclientappApp.venda.formaDePagamento" for="field_formaDePagamento">Forma De Pagamento</label>
-            <input type="text" class="form-control" name="formaDePagamento" id="field_formaDePagamento"
-                    ng-model="vm.venda.formaDePagamento"
-                     />
-        </div>
-        <div class="form-group">
-            <label translate="xclientappApp.venda.cliente" for="field_cliente">Cliente</label>
-            <select class="form-control" id="field_cliente" name="cliente" ng-model="vm.venda.clienteId" ng-options="cliente.id as cliente.clienteNomeCompleto for cliente in vm.clientes"            >
-                <option value=""></option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label translate="xclientappApp.venda.itens" for="field_itens">Itens</label>
-            <select class="form-control" id="field_itens" name="itens" ng-model="vm.venda.item.id" ng-options="produto.id as produto.prodNome for produto in vm.produtos"            >
-                <option value=""></option>
-            </select>
-        </div>
-        <div ng-if="$error">
-            <h4>Este item não possui todas essas unidades</h4>
         </div>
     </div>
     <div class="modal-footer">
