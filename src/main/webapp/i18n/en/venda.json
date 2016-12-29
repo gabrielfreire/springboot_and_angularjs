@@ -16,6 +16,7 @@
             "detail": {
                 "title": "Sale"
             },
+            "painelTitle": "Sellings: {{amount}}",
             "pedidoData": "Date",
             "pedidoQtd": "Amount",
             "formaDePagamento": "Payment method",

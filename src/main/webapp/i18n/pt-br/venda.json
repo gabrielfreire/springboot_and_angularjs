@@ -16,6 +16,7 @@
             "detail": {
                 "title": "Venda"
             },
+            "painelTitle": "Vendas: {{amount}}",
             "pedidoData": "Data do pedido",
             "pedidoQtd": "Quantidade",
             "formaDePagamento": "Forma de pagamento",

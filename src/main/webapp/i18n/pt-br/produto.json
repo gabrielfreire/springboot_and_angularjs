@@ -16,11 +16,15 @@
             "detail": {
                 "title": "Produto"
             },
+            "painelTitle": "Produtos: {{amount}}",
+            "estoqueBaixo": "COM ESTOQUE BAIXO",
+            "proxValidade": "PRÓXIMO DA VALIDADE",
             "prodCodigo": "Código",
             "prodNome": "Produto",
             "prodMarca": "Marca",
             "prodPreco": "Valor de Venda",
             "prodQtd": "Quantidade",
+            "prodQtdEstoque": "Quantidade em Estoque",
             "prodCor": "Cor",
             "valorCompra": "Valor de Compra",
             "qtdMinima": "Quantidade Mínima",

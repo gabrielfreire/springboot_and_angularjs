@@ -16,6 +16,7 @@
             "detail": {
                 "title": "Client"
             },
+            "painelTitle": "Clients: {{amount}}",
             "clienteNomeCompleto": "Full Name",
             "clienteEmail": "E-mail",
             "clienteTelefone": "Phone",
@@ -26,7 +27,9 @@
             "clienteCidade": "City",
             "clienteEstado": "State",
             "compras": "Shopping",
-            "user": "User"
+            "user": "User",
+            "numero": "Number",
+            "complemento": "Aditional Information"
         }
     }
 }

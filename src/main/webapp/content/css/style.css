@@ -16,7 +16,7 @@ body{
 
 	
 }*/
-.ng-invalid{
+input.ng-invalid{
 	border: 1px solid red !important;
 }
 .panel{

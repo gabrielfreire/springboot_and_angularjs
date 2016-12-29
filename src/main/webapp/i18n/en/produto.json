@@ -2,33 +2,36 @@
     "xclientappApp": {
         "produto" : {
             "home": {
-                "title": "Produtos",
-                "createLabel": "Create a new Produto",
-                "createOrEditLabel": "Create or edit a Produto",
-                "search": "Search for Produto"
+                "title": "Products",
+                "createLabel": "Create a new Product",
+                "createOrEditLabel": "Create or edit a Product",
+                "search": "Search for a Product"
             },
-            "created": "A new Produto is created with identifier {{ param }}",
-            "updated": "A Produto is updated with identifier {{ param }}",
-            "deleted": "A Produto is deleted with identifier {{ param }}",
+            "created": "A new Product was created with success!",
+            "updated": "A Product was updated with success!",
+            "deleted": "A Product was deleted with success!",
             "delete": {
-                "question": "Are you sure you want to delete Produto {{ id }}?"
+                "question": "Are you sure you want to delete this Product?"
             },
             "detail": {
-                "title": "Produto"
+                "title": "Product"
             },
-            "prodCodigo": "Prod Codigo",
-            "prodNome": "Prod Nome",
-            "prodMarca": "Prod Marca",
-            "prodPreco": "Prod Preco",
-            "prodQtd": "Prod Qtd",
-            "prodCor": "Prod Cor",
-            "valorCompra": "Valor Compra",
-            "qtdMinima": "Qtd Minima",
-            "dataValidade": "Data Validade",
+            "painelTitle": "Products: {{amount}}",
+            "estoqueBaixo": "LOW IN IVENTORY",
+            "proxValidade": "CLOSE TO EXPIRE",
+            "prodCodigo": "ID",
+            "prodNome": "Product",
+            "prodMarca": "Brand",
+            "prodPreco": "Selling Price",
+            "prodQtd": "Amount",
+            "prodQtdEstoque": "Amount in Iventory",
+            "prodCor": "Color",
+            "valorCompra": "Buying Price",
+            "qtdMinima": "Minimum Amount",
+            "dataValidade": "Expire Date",
             "user": "User",
-            "categoria": "Categoria",
-            "fornecedor": "Fornecedor",
-            "fornecedor": "Fornecedor"
+            "categoria": "Category",
+            "fornecedor": "Supplier"
         }
     }
 }

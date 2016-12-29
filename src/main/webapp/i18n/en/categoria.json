@@ -2,21 +2,21 @@
     "xclientappApp": {
         "categoria" : {
             "home": {
-                "title": "Categorias",
-                "createLabel": "Create a new Categoria",
-                "createOrEditLabel": "Create or edit a Categoria",
-                "search": "Search for Categoria"
+                "title": "Categories",
+                "createLabel": "Create a new Category",
+                "createOrEditLabel": "Create or edit a Category",
+                "search": "Search for Category"
             },
-            "created": "A new Categoria is created with identifier {{ param }}",
-            "updated": "A Categoria is updated with identifier {{ param }}",
-            "deleted": "A Categoria is deleted with identifier {{ param }}",
+            "created": "A new Category was created with success",
+            "updated": "A Category was updated with success",
+            "deleted": "A Category was deleted with ID {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete Categoria {{ id }}?"
+                "question": "Are you sure you want to delete this Category {{ id }}?"
             },
             "detail": {
-                "title": "Categoria"
+                "title": "Category"
             },
-            "catNome": "Cat Nome"
+            "catNome": "Category name"
         }
     }
 }

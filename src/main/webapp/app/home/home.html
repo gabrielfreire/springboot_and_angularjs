@@ -83,8 +83,11 @@
                         
                     </div>
                     <div ng-show="vm.isAuthenticated()">
+
                         <h1 class="mainTitle"><span translate="home.bemvindo" translate-values="{username: '{{vm.account.firstName + ' ' + vm.account.lastName}}'}">Bem-vindo {{vm.account.firstName}}</span></h1>  
-                        <p class="landingContent text-center"><span translate="home.conheca">Conheça mais um pouco dos nossos produtos neste</span><a href="http://www.gabrielfreire.com.br" target="blank">link</a>.</p>           
+                        <p class="landingContent text-center"><span translate="home.conheca">Conheça mais um pouco dos nossos produtos neste</span><a href="http://www.gabrielfreire.com.br" target="blank">link</a>.</p>    
+
+                        <button ui-sref="dashboard.painel" class="btn btn-lg btn-success" translate="home.dashboardBtn">Visit my Dashboard</button>       
                         
                     </div>
                 </div>

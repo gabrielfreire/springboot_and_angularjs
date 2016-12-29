@@ -16,6 +16,7 @@
             "detail": {
                 "title": "Cliente"
             },
+            "painelTitle": "Clientes: {{amount}}",
             "clienteNomeCompleto": "Nome Completo",
             "clienteEmail": "E-mail",
             "clienteTelefone": "Telefone",

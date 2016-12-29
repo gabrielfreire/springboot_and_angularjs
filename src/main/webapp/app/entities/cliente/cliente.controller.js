@@ -18,6 +18,7 @@
             Cliente.query(function(result) {
                 vm.clientes = result;
             });
+   
         }
 
         $(document).ready(function(){
